@@ -1,0 +1,169 @@
+---
+import AnnouncementBar from "@/components/AnnouncementBar.astro";
+import Logo from "@/components/Logo.astro";
+import config from "@/config/config.json";
+import LanguageSwitcher from "@/helpers/LanguageSwitcher";
+import {
+  getLangFromUrl,
+  getTranslations,
+  slugSelector,
+} from "@/lib/utils/languageParser";
+import type { ContentEntryMap } from "astro:content";
+
+let lang = getLangFromUrl(Astro.url);
+const menu = await getTranslations(lang as keyof ContentEntryMap);
+
+const { navigation_button, settings, announcement_bar } = config;
+const { default_language } = settings;
+const { pathname } = Astro.url;
+const { get_started } = await getTranslations(lang as keyof ContentEntryMap);
+
+const disabledLanguages = config.settings.disable_languages as string[];
+if (disabledLanguages.includes(lang)) {
+  lang = default_language;
+}
+---
+
+{announcement_bar.enable && <AnnouncementBar />}
+
+<header class={`header z-30 ${settings.sticky_header && "sticky top-0"}`}>
+  <nav class="navbar container">
+    
+    <!-- logo -->
+    <div class="order-0">
+      <Logo /> odgx
+    </div>
+    
+    <!-- navbar toggler -->
+    <input id="nav-toggle" type="checkbox" class="hidden" />
+    <label
+      for="nav-toggle"
+      class="order-3 cursor-pointer flex items-center lg:hidden lg:order-1"
+    >
+      <svg id="show-button" class="h-6 fill-current block" viewBox="0 0 20 20">
+        <title>Menu Open</title>
+        <path d="M0 3h20v2H0V3z m0 6h20v2H0V9z m0 6h20v2H0V0z"></path>
+      </svg>
+      <svg id="hide-button" class="h-6 fill-current hidden" viewBox="0 0 20 20">
+        <title>Menu Close</title>
+        <polygon
+          points="11 9 22 9 22 11 11 11 11 22 9 22 9 11 -2 11 -2 9 9 9 9 -2 11 -2"
+          transform="rotate(45 10 10)"></polygon>
+      </svg>
+    </label>
+
+    <ul id="nav-menu" class="navbar-nav lg:space-x-2 xl:space-x-8">
+      {
+        menu?.main.map((menu: any) => (
+          <>
+            {menu.hasChildren ? (
+              <li class="nav-item nav-dropdown group relative">
+                <span class="nav-link inline-flex items-center cursor-pointer">
+                  {menu.name}
+                  <svg
+                    class="h-4 w-4 fill-current transition-transform duration-200"
+                    viewBox="0 0 20 20"
+                  >
+                    <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+                  </svg>
+                </span>
+                <ul class="nav-dropdown-list">
+                  {menu.children?.map((child: any) => (
+                    <li class="nav-dropdown-item">
+                      <a
+                        href={slugSelector(child.url, lang)}
+                        aria-label={child.name}
+                        class={`nav-dropdown-link block ${
+                          pathname === slugSelector(child.url, lang) && "active"
+                        }`}
+                      >
+                        {child.name}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </li>
+            ) : (
+              <li class="nav-item">
+                <a
+                  href={slugSelector(menu.url, lang)}
+                  class={`nav-link block ${
+                    pathname === slugSelector(menu.url, lang) && "active"
+                  }`}
+                >
+                  {menu.name}
+                </a>
+              </li>
+            )}
+          </>
+        ))
+      }
+      
+      <!-- Navigation button -->
+      {
+        navigation_button.enable && (
+          <li class="mt-4 inline-block lg:hidden">
+            <a class="btn btn-primary btn-sm" href={navigation_button.link}>
+              {get_started}
+            </a>
+          </li>
+        )
+      }
+    </ul>
+
+    <!-- Navigation rechts: Language Switcher, Dark Mode Button, CTA -->
+    <div class="order-1 ml-auto flex items-center md:order-2">
+      <!-- Language switcher -->
+      <LanguageSwitcher client:only="react" lang={lang} pathname={pathname} />
+
+      <!-- Dark Mode Toggle Button -->
+      <button id="theme-toggle" class="ml-4 text-xl">
+        🌙
+      </button>
+
+      <!-- Navigation button -->
+      {
+        navigation_button.enable && (
+          <a
+            class="btn btn-primary hidden lg:inline-block"
+            href={navigation_button.link}
+          >
+            {get_started}
+          </a>
+        )
+      }
+    </div>
+  </nav>
+</header>
+
+<script>
+  const themeToggle = document.getElementById("theme-toggle");
+  const currentTheme = localStorage.getItem("theme") || "light";
+
+  if (currentTheme === "dark") {
+    document.documentElement.classList.add("dark");
+    themeToggle.textContent = "☀️";
+  }
+
+  themeToggle.addEventListener("click", () => {
+    document.documentElement.classList.toggle("dark");
+    const newTheme = document.documentElement.classList.contains("dark") ? "dark" : "light";
+    localStorage.setItem("theme", newTheme);
+    themeToggle.textContent = newTheme === "dark" ? "☀️" : "🌙";
+  });
+</script>
+
+<style>
+  .dark {
+    background-color: #121212;
+    color: white;
+  }
+  #theme-toggle {
+    margin-left: 20px;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    background: transparent;
+    font-size: 1.5rem;
+  }
+</style>

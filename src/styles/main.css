@@ -1,0 +1,71 @@
+@import "tailwindcss";
+@plugin "../tailwind-plugin/tw-theme.mjs";
+@plugin "../tailwind-plugin/tw-bs-grid.mjs";
+@plugin "@tailwindcss/forms";
+@plugin "@tailwindcss/typography";
+
+@import "./safe.css";
+@import "./utilities.css";
+
+@layer base {
+  @import "./base.css";
+}
+
+@layer components {
+  @import "./components.css";
+  @import "./navigation.css";
+  @import "./buttons.css";
+}
+
+@theme {
+  --shadow: 0px 4px 40px rgba(0, 0, 0, 0.05);
+  --radius-sm: 4px;
+  --radius: 6px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+}
+
+
+
+
+/* 🌙 Dark Mode Styling */
+.dark {
+  --color-primary: #121212; /* Hintergrundfarbe */
+  --color-secondary: #1a1a1a;
+  --color-text: #ffffff; /* Textfarbe */
+  --color-link: #cc2929;
+}
+
+/* Hintergrund ändern */
+.dark body {
+  background-color: var(--color-primary);
+  color: var(--color-text);
+}
+
+/* Navigation anpassen */
+.dark .navbar {
+  background-color: var(--color-secondary);
+}
+
+/* Links heller machen */
+.dark a {
+  color: var(--color-link);
+}
+
+/* Buttons dunkler machen */
+.dark .btn-primary {
+  background-color: #333;
+  color: white;
+}
+
+/* Dropdown-Menü */
+.dark .nav-dropdown-list {
+  background-color: var(--color-secondary);
+}
+
+/* Falls Footer oder andere Bereiche angepasst werden müssen */
+.dark footer {
+  background-color: var(--color-secondary);
+  color: var(--color-text);
+}
+
