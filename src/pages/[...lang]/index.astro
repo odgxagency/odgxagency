@@ -56,6 +56,12 @@ const hero = {
   client_logos: homepage[0].data.hero.client_logos,
 };
 
+const testimonialData = await getSinglePage(
+  "testimonialSection",
+  lang as keyof ContentEntryMap,
+  "testimonial"
+);
+const testimonial = testimonialData.length > 0 ? testimonialData[0] : null;
 ---
 
 <Base>
@@ -63,6 +69,7 @@ const hero = {
   <Feature {feature} />
   <Video {video} />
   <Reasons {reason} />
+  {testimonial && <Testimonial testimonial={testimonial} />}
   <Faq />
 </Base>
 </file>
