@@ -56,16 +56,6 @@ const hero = {
   client_logos: homepage[0].data.hero.client_logos,
 };
 
-const planData = await getSinglePage("planSection", lang as keyof ContentEntryMap, "plan");
-const plan = planData.length > 0 ? planData[0] : null;
-
-const testimonialData = await getSinglePage(
-  "testimonialSection",
-  lang as keyof ContentEntryMap,
-  "testimonial"
-);
-const testimonial = testimonialData.length > 0 ? testimonialData[0] : null;
-
 ---
 
 <Base>
@@ -73,8 +63,8 @@ const testimonial = testimonialData.length > 0 ? testimonialData[0] : null;
   <Feature {feature} />
   <Video {video} />
   <Reasons {reason} />
-  {plan && <Plan {plan} lang={language as string} client:only="react" />}
-  {testimonial && <Testimonial {testimonial} />}
+  <Plan {plan} lang={language as string} client:only="react" />
+  <Testimonial {testimonial} />
   <Faq />
 </Base>
 </file>
