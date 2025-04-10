@@ -31,7 +31,7 @@ const username = "adjective";
 const password = "marvelous";
 const auth = btoa(`${username}:${password}`);
 
-const res = await fetch("https://your-live-link.live.site.io/wp-json/wp/v2/pages?slug=homepage-en", {
+const res = await fetch(`https://your-live-link.live.site.io/wp-json/wp/v2/pages?slug=${wpSlug}`, {
   headers: {
     Authorization: `Basic ${auth}`,
   },
@@ -70,4 +70,3 @@ const plan = planData.length > 0 ? planData[0] : null;
   <Testimonial {testimonial} />
   <Faq />
 </Base>
-</file>
