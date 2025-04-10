@@ -74,6 +74,7 @@ const testimonial = testimonialData.length > 0 ? testimonialData[0] : null;
   <Video {video} />
   <Reasons {reason} />
   {plan && <Plan {plan} lang={language as string} client:only="react" />}
-  <Testimonial {testimonial} />
+  {testimonial && <Testimonial {testimonial} />}
   <Faq />
 </Base>
+</file>
