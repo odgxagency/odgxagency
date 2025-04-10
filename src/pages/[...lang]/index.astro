@@ -1,4 +1,3 @@
----
 import Faq from "@/components/Faq.astro";
 import Feature from "@/components/home/Feature.astro";
 import Hero from "@/components/home/Hero.astro";
@@ -58,6 +57,9 @@ const hero = {
   client_logos: homepage[0].data.hero.client_logos,
 };
 
+const planData = await getSinglePage("planSection", lang as keyof ContentEntryMap, "plan");
+const plan = planData.length > 0 ? planData[0] : null;
+
 ---
 
 <Base>
@@ -65,8 +67,7 @@ const hero = {
   <Feature {feature} />
   <Video {video} />
   <Reasons {reason} />
-  <Plan {plan} lang={language as string} client:only="react" />
+  {plan && <Plan {plan} lang={language as string} client:only="react" />}
   <Testimonial {testimonial} />
   <Faq />
 </Base>
-</file>
