@@ -25,6 +25,31 @@ const language = lang || getLangFromUrl(Astro.url);
 const homepage = await getListPage("homepage", lang as keyof ContentEntryMap);
 const { feature, video, reason } = homepage[0].data;
 
+// ✅ Try to load WordPress hero content (fallback to Markdown if not available)
+let wpPage = null;
+const isNetlify = import.meta.env.NETLIFY === "true";
+const buttons = [];
+
+if (!isNetlify) {
+  const WP_API_BASE = import.meta.env.PUBLIC_WP_API_BASE || "http://odgx.local";
+  const wpSlug = lang === "en" ? "homepage-en" : "homepage-de";
+
+  try {
+    const res = await fetch(`${WP_API_BASE}/wp-json/wp/v2/pages?slug=${wpSlug}`);
+    const data = await res.json();
+    wpPage = data.length > 0 ? data[0] : null;
+
+    if (wpPage?.acf?.hero_button_label && wpPage?.acf?.hero_button_link) {
+      buttons.push({
+        label: wpPage.acf.hero_button_label,
+        link: wpPage.acf.hero_button_link,
+      });
+    }
+  } catch (err) {
+    console.error("❌ Failed to fetch WordPress hero:", err);
+  }
+}
+
 const wpSlug = lang === "en" ? "homepage-en" : "homepage-de";
 const res = await fetch(`${import.meta.env.PUBLIC_WP_API_BASE}/wp-json/wp/v2/pages?slug=${wpSlug}`);
 const data = await res.json();
