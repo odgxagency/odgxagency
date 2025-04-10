@@ -31,7 +31,7 @@ const username = "adjective";
 const password = "marvelous";
 const auth = btoa(`${username}:${password}`);
 
-const res = await fetch(`https://your-live-link.live.site.io/wp-json/wp/v2/pages?slug=${wpSlug}`, {
+const res = await fetch(`https://next-boats.localsite.io/wp-json/wp/v2/pages?slug=${wpSlug}`, {
   headers: {
     Authorization: `Basic ${auth}`,
   },
