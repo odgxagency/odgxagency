@@ -25,24 +25,10 @@ const language = lang || getLangFromUrl(Astro.url);
 const homepage = await getListPage("homepage", lang as keyof ContentEntryMap);
 const { feature, video, reason } = homepage[0].data;
 
-const plan = (
-  await getSinglePage("planSection", lang as keyof ContentEntryMap, "plan")
-)[0];
-
-const testimonial = await getSinglePage(
-  "testimonialSection",
-  lang as keyof ContentEntryMap,
-  "testimonial"
-);
-
-// 🔄 Lade NUR Hero-Inhalt aus WordPress
 const wpSlug = lang === "en" ? "homepage-en" : "homepage-de";
-const res = await fetch(`http://odgx.local/wp-json/wp/v2/pages?slug=${wpSlug}`);
+const res = await fetch(`${import.meta.env.PUBLIC_WP_API_BASE}/wp-json/wp/v2/pages?slug=${wpSlug}`);
 const data = await res.json();
 const wpPage = data.length > 0 ? data[0] : null;
-
-
-
 
 const buttons = [];
 
@@ -53,21 +39,13 @@ if (wpPage?.acf?.hero_button_label && wpPage?.acf?.hero_button_link) {
   });
 }
 
-
-// Wenn du keinen ACF nutzt, kommt dein Hero-Content direkt aus dem Editor
-// z. B. als HTML – du kannst z. B. nur ein paar Werte übergeben:
-// Hero-Objekt aus WordPress ACF
 const hero = {
   title: wpPage?.acf?.hero_title || "Fallback Title",
   content: wpPage?.acf?.hero_content || "<p>Fallback Text</p>",
   images: wpPage?.acf?.hero_images ? [wpPage.acf.hero_images.url] : [],
-
-
-
   buttons,
   client_logos: homepage[0].data.hero.client_logos,
 };
-
 
 ---
 
@@ -80,3 +58,4 @@ const hero = {
   <Testimonial {testimonial} />
   <Faq />
 </Base>
+</file>
