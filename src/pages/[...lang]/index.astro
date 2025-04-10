@@ -27,7 +27,7 @@ const { feature, video, reason } = homepage[0].data;
 
 // ✅ Try to load WordPress hero content (fallback to Markdown if not available)
 let wpPage = null;
-const isNetlify = import.meta.env.NETLIFY === "true";
+const isNetlify = import.meta.env.SITE?.includes(".netlify.app");
 const buttons = [];
 
 if (!isNetlify) {
@@ -72,3 +72,4 @@ const plan = planData.length > 0 ? planData[0] : null;
   <Testimonial {testimonial} />
   <Faq />
 </Base>
+</file>
