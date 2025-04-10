@@ -50,20 +50,6 @@ if (!isNetlify) {
   }
 }
 
-const wpSlug = lang === "en" ? "homepage-en" : "homepage-de";
-const res = await fetch(`${import.meta.env.PUBLIC_WP_API_BASE}/wp-json/wp/v2/pages?slug=${wpSlug}`);
-const data = await res.json();
-const wpPage = data.length > 0 ? data[0] : null;
-
-const buttons = [];
-
-if (wpPage?.acf?.hero_button_label && wpPage?.acf?.hero_button_link) {
-  buttons.push({
-    label: wpPage.acf.hero_button_label,
-    link: wpPage.acf.hero_button_link,
-  });
-}
-
 const hero = {
   title: wpPage?.acf?.hero_title || "Fallback Title",
   content: wpPage?.acf?.hero_content || "<p>Fallback Text</p>",
