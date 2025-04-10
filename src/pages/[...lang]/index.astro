@@ -25,6 +25,12 @@ const language = lang || getLangFromUrl(Astro.url);
 const homepage = await getListPage("homepage", lang as keyof ContentEntryMap);
 const { feature, video, reason } = homepage[0].data;
 
+const testimonial = await getSinglePage(
+  "testimonialSection",
+  lang as keyof ContentEntryMap,
+  "testimonial"
+);
+
 // ✅ Always fetch from the local WordPress instance
 const wpSlug = lang === "en" ? "homepage-en" : "homepage-de";
 const username = "adjective";
@@ -56,9 +62,6 @@ const hero = {
   client_logos: homepage[0].data.hero.client_logos,
 };
 
-
----
-
 <Base>
   <Hero {hero} />
   <Feature {feature} />
@@ -67,4 +70,3 @@ const hero = {
   <Testimonial {testimonial} />
   <Faq />
 </Base>
-</file>
