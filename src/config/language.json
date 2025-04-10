@@ -1,14 +1,14 @@
 [
   {
-    "languageName": "En",
-    "languageCode": "en",
-    "contentDir": "english",
+    "languageName": "De",
+    "languageCode": "de",
+    "contentDir": "german",
     "weight": 1
   },
   {
-    "languageName": "Es",
-    "languageCode": "es",
-    "contentDir": "spanish",
+    "languageName": "En",
+    "languageCode": "en",
+    "contentDir": "english",
     "weight": 2
   }
 ]

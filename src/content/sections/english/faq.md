@@ -1,24 +1,24 @@
 ---
-title_1: "Sie haben Fragen?"
-title_2: "Wir haben Antworten."
+title_1: "¿Tienes alguna pregunta?"
+title_2: "Estamos aquí para responder."
 faqs:
-  - question: "What features does Sapick offer?"
-    answer: "Automatically track your income and expenses, helping you create personalized budgets and stay on top of your financial goals"
-  - question: "How can Sapick benefit my organization?"
-    answer: "Sapick streamlines your financial operations by automating invoicing, expense tracking, and reporting, allowing your team to focus on growth and strategy."
-  - question: "Is Sapick suitable for small businesses or large enterprises?"
-    answer: "Sapick is designed to scale effortlessly, providing tailored solutions for both small businesses and large enterprises, ensuring seamless financial management at every stage."
-  - question: "Is Sapick customizable to fit our specific needs?"
-    answer: "With its flexible features and modular design, Sapick can be customized to meet the unique financial requirements of your organization, ensuring a perfect fit."
-  - question: "How secure is the data stored on Sapick?"
-    answer: "Your data is protected with advanced encryption and multi-factor authentication, ensuring that sensitive financial information remains secure and accessible only to authorized users."
-  - question: "How secure is Sapick?"
-    answer: "Sapick employs industry-leading security measures, including end-to-end encryption and regular vulnerability assessments, to ensure the highest level of protection for your data."
+  - question: "¿Qué características ofrece Sapick?"
+    answer: "Rastrea automáticamente tus ingresos y gastos, ayudándote a crear presupuestos personalizados y mantener el control de tus objetivos financieros."
+  - question: "¿Cómo puede Sapick beneficiar a mi organización?"
+    answer: "Sapick agiliza tus operaciones financieras automatizando la facturación, el seguimiento de gastos y los informes, permitiendo que tu equipo se enfoque en el crecimiento y la estrategia."
+  - question: "¿Es Sapick adecuado para pequeñas empresas o grandes corporaciones?"
+    answer: "Sapick está diseñado para escalar sin esfuerzo, ofreciendo soluciones personalizadas tanto para pequeñas empresas como para grandes corporaciones, asegurando una gestión financiera sin interrupciones en cada etapa."
+  - question: "¿Es Sapick personalizable para adaptarse a nuestras necesidades específicas?"
+    answer: "Con sus características flexibles y diseño modular, Sapick puede personalizarse para cumplir con los requisitos financieros únicos de tu organización, asegurando un ajuste perfecto."
+  - question: "¿Qué tan seguro es el almacenamiento de datos en Sapick?"
+    answer: "Tus datos están protegidos con cifrado avanzado y autenticación de múltiples factores, asegurando que la información financiera sensible permanezca segura y accesible solo para usuarios autorizados."
+  - question: "¿Qué tan seguro es Sapick?"
+    answer: "Sapick emplea medidas de seguridad líderes en la industria, incluyendo cifrado de extremo a extremo y evaluaciones regulares de vulnerabilidades, para asegurar el más alto nivel de protección para tus datos."
 
 contact:
-  title: "Noch mehr Fragen? Schreiben Sie uns einfach."
+  title: "¿Aún estás confundido? No te preocupes, solo contáctanos"
   button:
     enable: true
-    label: "Kontakt aufnehmen"
+    label: "Contacta con nuestro soporte"
     link: "/contact"
 ---

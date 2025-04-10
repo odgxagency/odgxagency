@@ -1,36 +1,36 @@
 ---
-title: "Choose the plan that fits your Business"
+title: "Elige el plan que se adapta a tu negocio"
 
 pricing_tab:
-  - label: "Monthly"
+  - label: "Mensual"
     type: "month"
-  - label: "Annual"
+  - label: "Anual"
     type: "year"
     badge:
       enable: true
-      label: "Save 20%"
+      label: "Ahorra un 20%"
 
 pricing_card:
   - title: "Personal"
-    content: "The personal Plan is designed for personal or medium-sized teams requiring advanced features and scalability"
+    content: "El Plan Personal está diseñado para personas o equipos medianos que necesitan funciones avanzadas y escalabilidad."
     price:
       free: true
-      custom: "FREE!"
+      custom: "FREE"
       currency: "$"
       monthly_price: 0
       yearly_price: 0
     featured: false
     button:
       enable: true
-      label: "Get Started"
+      label: "Comenzar"
       link: "/contact"
     service:
-      title: "Everything on Basic plan, plus"
+      title: "Todo en el plan Básico, más"
       points:
-        - "Advanced features for managing budgeting, report, etc"
-        - "Scalability to accommodate personal financial"
+        - "Funciones avanzadas para gestionar presupuestos, informes, etc."
+        - "Escalabilidad para adaptarse a las finanzas personales."
   - title: "Startup"
-    content: "The Startup Plan is designed for startup or medium-sized teams requiring advanced features and scalability"
+    content: "El Plan Startup está diseñado para startups o equipos medianos que necesitan funciones avanzadas y escalabilidad."
     price:
       free: false
       currency: "$"
@@ -39,15 +39,15 @@ pricing_card:
     featured: false
     button:
       enable: true
-      label: "Choose Plan"
+      label: "Elegir plan"
       link: "/contact"
     service:
-      title: "Everything on Basic plan, plus"
+      title: "Todo en el plan Básico, más"
       points:
-        - "Scalability to accommodate medium-sized teams"
-        - "Scheduling all your employee salary and health care"
-  - title: "Company"
-    content: "Our Company Plan is ideal for larger organizations seeking comprehensive solutions for their teams"
+        - "Escalabilidad para adaptarse a equipos medianos."
+        - "Programación de salarios y atención médica de tus empleados."
+  - title: "Empresa"
+    content: "Nuestro Plan Empresa es ideal para organizaciones más grandes que buscan soluciones integrales para sus equipos."
     price:
       free: false
       currency: "$"
@@ -56,15 +56,15 @@ pricing_card:
     featured: true
     button:
       enable: true
-      label: "Choose Plan"
+      label: "Elegir plan"
       link: "/contact"
     service:
-      title: "Everything on Basic plan, plus"
+      title: "Todo en el plan Básico, más"
       points:
-        - "All in startup plan and you can plan the yearly company goals"
-        - "Tailored solutions for larger organizations"
+        - "Todo en el plan Startup y puedes planificar los objetivos anuales de la empresa."
+        - "Soluciones personalizadas para organizaciones más grandes."
   - title: "Enterprise"
-    content: "The Enterprise Plan is designed for Enterprise or medium-sized teams requiring advanced features"
+    content: "El Plan Enterprise está diseñado para empresas o equipos medianos que necesitan funciones avanzadas."
     price:
       free: true
       custom: "CUSTOM"
@@ -74,11 +74,11 @@ pricing_card:
     featured: false
     button:
       enable: true
-      label: "Contact Sales"
+      label: "Contactar Ventas"
       link: "/contact"
     service:
-      title: "Everything on Basic plan, plus"
+      title: "Todo en el plan Básico, más"
       points:
-        - "You can add your services you need on your company"
-        - "Be the our priority service and be the first who get update"
+        - "Puedes agregar los servicios que necesitas para tu empresa."
+        - "Sé nuestro servicio prioritario y recibe las actualizaciones primero."
 ---

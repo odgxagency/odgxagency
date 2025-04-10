@@ -4,6 +4,7 @@ import Feature from "@/components/home/Feature.astro";
 import Hero from "@/components/home/Hero.astro";
 import Reasons from "@/components/home/Reasons.astro";
 import Video from "@/components/home/Video.astro";
+import Plan from "@/components/pricing/Plan";
 import Base from "@/layouts/Base.astro";
 import { getListPage, getSinglePage } from "@/lib/contentParser.astro";
 import { getLangFromUrl, supportedLang } from "@/lib/utils/languageParser";
@@ -18,11 +19,11 @@ export function getStaticPaths() {
 }
 
 const { lang } = Astro.params;
-
 const language = lang || getLangFromUrl(Astro.url);
 
+// 🟢 Lade Inhalte wie vorher aus der Markdown-Datei
 const homepage = await getListPage("homepage", lang as keyof ContentEntryMap);
-const { hero, feature, video, reason } = homepage[0].data;
+const { feature, video, reason } = homepage[0].data;
 
 const plan = (
   await getSinglePage("planSection", lang as keyof ContentEntryMap, "plan")
@@ -34,10 +35,40 @@ const testimonial = await getSinglePage(
   "testimonial"
 );
 
-const featureIndex = await getListPage(
-  "features",
-  lang as keyof ContentEntryMap
-);
+// 🔄 Lade NUR Hero-Inhalt aus WordPress
+const wpSlug = lang === "en" ? "homepage-en" : "homepage-de";
+const res = await fetch(`http://odgx.local/wp-json/wp/v2/pages?slug=${wpSlug}`);
+const data = await res.json();
+const wpPage = data.length > 0 ? data[0] : null;
+
+
+
+
+const buttons = [];
+
+if (wpPage?.acf?.hero_button_label && wpPage?.acf?.hero_button_link) {
+  buttons.push({
+    label: wpPage.acf.hero_button_label,
+    link: wpPage.acf.hero_button_link,
+  });
+}
+
+
+// Wenn du keinen ACF nutzt, kommt dein Hero-Content direkt aus dem Editor
+// z. B. als HTML – du kannst z. B. nur ein paar Werte übergeben:
+// Hero-Objekt aus WordPress ACF
+const hero = {
+  title: wpPage?.acf?.hero_title || "Fallback Title",
+  content: wpPage?.acf?.hero_content || "<p>Fallback Text</p>",
+  images: wpPage?.acf?.hero_images ? [wpPage.acf.hero_images.url] : [],
+
+
+
+  buttons,
+  client_logos: homepage[0].data.hero.client_logos,
+};
+
+
 ---
 
 <Base>
@@ -45,6 +76,7 @@ const featureIndex = await getListPage(
   <Feature {feature} />
   <Video {video} />
   <Reasons {reason} />
+  <Plan {plan} lang={language as string} client:only="react" />
   <Testimonial {testimonial} />
   <Faq />
 </Base>

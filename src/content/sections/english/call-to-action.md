@@ -1,7 +1,7 @@
 ---
-title: "Ready to manage finance easily?"
+title: "¿Listo para gestionar tus finanzas fácilmente?"
 button:
   enable: true
-  label: "Get Started for Free"
+  label: "Comienza gratis"
   link: "/contact"
 ---

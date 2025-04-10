@@ -43,13 +43,15 @@ const { hero } = Astro.props;
         </div>
         <div class="col-12 xl:col-6" data-aos="zoom-out-sm">
           <div>
+            {console.log("Hero Image URL:", hero.images[0])}
+
             <ImageMod
               src={hero.images[0]}
               alt="hero"
-              width={0}
-              height={0}
               class="mx-auto xl:scale-125"
               format="webp"
+              width={287}
+              height={509}
             />
           </div>
         </div>

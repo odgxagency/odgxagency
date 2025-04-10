@@ -1,6 +1,6 @@
 {
   "site": {
-    "title": "DigitalX Agency",
+    "title": "Sapick - SaaS & Tailwind Template for IT Industry",
     "base_url": "https://sapick-astro.vercel.app",
     "base_path": "/",
     "trailing_slash": false,
@@ -17,19 +17,19 @@
     "pagination": 2,
     "summary_length": 200,
     "blog_folder": "blog",
-    "default_language": "en",
+    "default_language": "de",
     "disable_languages": [],
     "default_language_in_subdir": false
   },
 
   "params": {
     "contact_form_action": "#",
-    "copyright": "Copyright © 2025 DigitalX.Agency . All Rights Reserved"
+    "copyright": "Copyright © 2025 [Themefisher](https://themefisher.com/). All Rights Reserved"
   },
 
   "announcement_bar": {
     "enable": true,
-    "text": "Jetzt kontaktieren. Neukunden gewinnen. Ergebnisse steigern."
+    "text": "Get Sapick free account only for today, and get your money with referral code"
   },
 
   "navigation_button": {
