@@ -54,7 +54,8 @@ const testimonialData = await getSinglePage(
   lang as keyof ContentEntryMap,
   "testimonial"
 );
-const testimonial = testimonialData.length > 0 ? testimonialData : [];
+const testimonial = Array.isArray(testimonialData) && testimonialData.length > 0 ? testimonialData : [];
+
 
 
 
