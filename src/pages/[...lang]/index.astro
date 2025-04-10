@@ -4,7 +4,6 @@ import Feature from "@/components/home/Feature.astro";
 import Hero from "@/components/home/Hero.astro";
 import Reasons from "@/components/home/Reasons.astro";
 import Video from "@/components/home/Video.astro";
-import Plan from "@/components/pricing/Plan";
 import Base from "@/layouts/Base.astro";
 import { getListPage, getSinglePage } from "@/lib/contentParser.astro";
 import { getLangFromUrl, supportedLang } from "@/lib/utils/languageParser";
@@ -25,11 +24,6 @@ const language = lang || getLangFromUrl(Astro.url);
 const homepage = await getListPage("homepage", lang as keyof ContentEntryMap);
 const { feature, video, reason } = homepage[0].data;
 
-const testimonial = await getSinglePage(
-  "testimonialSection",
-  lang as keyof ContentEntryMap,
-  "testimonial"
-);
 
 // ✅ Always fetch from the local WordPress instance
 const wpSlug = lang === "en" ? "homepage-en" : "homepage-de";
@@ -53,6 +47,17 @@ if (wpPage?.acf?.hero_button_label && wpPage?.acf?.hero_button_link) {
     link: wpPage.acf.hero_button_link,
   });
 }
+
+
+const testimonialData = await getSinglePage(
+  "testimonialSection",
+  lang as keyof ContentEntryMap,
+  "testimonial"
+);
+const testimonial = testimonialData.length > 0 ? testimonialData : [];
+
+
+
 
 const hero = {
   title: wpPage?.acf?.hero_title || "Fallback Title",
