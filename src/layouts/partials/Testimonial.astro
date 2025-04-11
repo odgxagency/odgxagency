@@ -1,17 +1,10 @@
 ---
 import ImageMod from "@/components/ImageMod.astro";
 import { markdownify } from "@/lib/utils/textConverter";
-
-const testimonial = Astro.props.testimonial;
-
-if (!testimonial || testimonial.length === 0) {
-  // Nothing to render
-  return;
-}
+const { testimonial } = Astro.props;
 
 const { enable, title, reviews } = testimonial[0].data;
 ---
-
 
 {
   enable && (

@@ -49,17 +49,6 @@ if (wpPage?.acf?.hero_button_label && wpPage?.acf?.hero_button_link) {
 }
 
 
-const testimonialData = await getSinglePage(
-  "testimonialSection",
-  lang as keyof ContentEntryMap,
-  "testimonial"
-);
-const testimonial = Array.isArray(testimonialData) && testimonialData.length > 0 ? testimonialData : [];
-
-
-
-
-
 const hero = {
   title: wpPage?.acf?.hero_title || "Fallback Title",
   content: wpPage?.acf?.hero_content || "<p>Fallback Text</p>",
@@ -73,6 +62,6 @@ const hero = {
   <Feature {feature} />
   <Video {video} />
   <Reasons {reason} />
-  <Testimonial testimonial={testimonial} />
+  <Testimonial {testimonial} />
   <Faq />
 </Base>
