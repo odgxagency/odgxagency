@@ -28,7 +28,7 @@ const { feature, video, reason } = homepage[0].data;
 // ✅ Always fetch from the local WordPress instance
 const wpSlug = lang === "en" ? "homepage-en" : "homepage-de";
 const username = "adjective";
-const password = "marvelous";
+const password = "marveloud";
 const auth = btoa(`${username}:${password}`);
 
 const res = await fetch(`https://next-boats.localsite.io/wp-json/wp/v2/pages?slug=${wpSlug}`, {
