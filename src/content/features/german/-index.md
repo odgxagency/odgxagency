@@ -1,94 +1,110 @@
 ---
-title: "Características"
-meta_title: "Esta es la página de características"
-description: "Esta es una descripción"
+title: "Strategie-Workshop"
+meta_title: "Dies ist die Seite für Funktionen"
+description: "Dies ist eine Beschreibung"
 hero:
-  title: "Tu solución de pago todo en uno"
-  content: "Obtén valiosos conocimientos con nuestras analíticas fáciles de usar, diseñadas para ayudarte a optimizar tus estrategias y mejorar los resultados."
+  title: "Strategie-Workshop"
+  content: "Klarheit schaffen über Zielgruppen, Content-Strategie und passende Funnel-Struktur"
   features:
-    - button: "Gestión Inteligente de Presupuestos"
-      title: "Gestiona tu presupuesto con nuestra solución de IA inteligente."
-      content: "Realiza un seguimiento automático de tus ingresos y gastos, ayudándote a crear presupuestos personalizados y alcanzar tus objetivos financieros."
+    - button: "Intelligente Budgetverwaltung"
+      title: "Verwalte dein Budget mit unserer intelligenten KI-Lösung."
+      content: "Verfolge automatisch deine Einnahmen und Ausgaben, erstelle personalisierte Budgets und erreiche deine finanziellen Ziele."
       image: "/images/features/1.png"
       link:
         enable: true
-        label: "Saber Más"
+        label: "Mehr erfahren"
         link: "#"
-    - button: "Pago Totalmente Digital"
-      title: "Envía y transfiere dinero a cualquier banco o billetera al instante"
-      content: "Nuestra plataforma ofrece conocimientos detallados y analíticas fáciles de entender que te ayudan a tomar mejores decisiones."
+    - button: "Vollständig digitale Zahlungen"
+      title: "Sende und überweise Geld sofort an jede Bank oder E-Wallet"
+      content: "Unsere Plattform bietet verständliche Einblicke und Analysen, um bessere Entscheidungen zu treffen."
       image: "/images/features/2.png"
       link:
         enable: true
-        label: "Saber Más"
+        label: "Mehr erfahren"
         link: "#"
-    - button: "Informes Dinámicos"
-      title: "Rastrea cada informe individualmente para un mejor análisis de datos"
-      content: "Nuestra plataforma proporciona conocimientos detallados y analíticas fáciles de entender que te ayudan a tomar mejores decisiones."
+    - button: "Dynamische Berichte"
+      title: "Verfolge jeden Bericht einzeln für bessere Datenanalysen"
+      content: "Unsere Plattform bietet detaillierte Einblicke und leicht verständliche Analysen, die dir helfen, bessere Entscheidungen zu treffen."
       image: "/images/features/3.png"
       link:
         enable: true
-        label: "Saber Más"
+        label: "Mehr erfahren"
         link: "#"
 
 benefit:
-  title: "Más beneficios que obtienes"
-  content: "Nuestro sistema ofrece datos en tiempo real e informes accionables, permitiéndote tomar decisiones empresariales informadas."
+  title: "Weitere Vorteile, die du erhältst"
+  content: "Unser System bietet Echtzeitdaten und umsetzbare Berichte, sodass du fundierte Geschäftsentscheidungen treffen kannst."
   benefits:
-    - title: "Analítica de productos"
-      content: "Tableros visuales que muestran métricas de productividad individuales y de equipo."
+    - title: "Produktanalyse"
+      content: "Visuelle Dashboards zeigen individuelle und Team-Produktivitätsmetriken."
       image: "/images/features/4.png"
-    - title: "Analítica financiera"
-      content: "Nuestra solución ofrece analíticas completas."
+    - title: "Finanzanalyse"
+      content: "Unsere Lösung bietet umfassende Analysen."
       image: "/images/features/5.png"
-    - title: "Envía y transfiere dinero a cualquier banco o billetera al instante"
-      content: "Nuestra plataforma ofrece conocimientos detallados y analíticas intuitivas, permitiéndote tomar decisiones bien informadas."
+    - title: "Sende und überweise Geld sofort"
+      content: "Unsere Plattform bietet detaillierte und intuitive Analysen, damit du fundierte Entscheidungen treffen kannst."
       image: "/images/features/7.png"
       points:
-        - "Mejora la eficiencia con automatización."
-        - "Impulsa el crecimiento con conocimientos accionables."
+        - "Verbessere die Effizienz durch Automatisierung."
+        - "Wachstum durch umsetzbare Einblicke fördern."
 
 trust:
-  title: "Confiado por más de 15,000 clientes"
-  content: "Obtén valiosos conocimientos con nuestras analíticas fáciles de usar, diseñadas para ayudarte a optimizar tus estrategias y mejorar los resultados."
+  title: "Vertraut von über 15.000 Kunden"
+  content: "Erhalte wertvolle Einblicke mit unseren benutzerfreundlichen Analysen, die dir helfen, deine Strategien zu optimieren und Ergebnisse zu verbessern."
   stats:
     - company: "/images/testimonial/11.svg"
-      comment: "Confiable y digno de confianza. Han ganado mi confianza y lealtad. Esta empresa ha demostrado constantemente confiabilidad y honestidad."
+      comment: "Zuverlässig und vertrauenswürdig. Sie haben mein Vertrauen und meine Loyalität gewonnen. Dieses Unternehmen zeigt konstant Verlässlichkeit und Ehrlichkeit."
       author: "/images/avatar/7.png"
       name: "Henry Arthur"
-      designation: "Fundador, Neitzsche"
+      designation: "Gründer, Neitzsche"
       numbers:
         - suffix: "%"
           value: 58
-          subtitle: "Crecimiento en 3 meses"
+          subtitle: "Wachstum in 3 Monaten"
         - suffix: "k"
           value: 132
-          subtitle: "Usuarios Activos"
+          subtitle: "Aktive Nutzer"
     - company: "/images/testimonial/9.svg"
-      comment: "Confiable y creíble. Han ganado mi confianza y lealtad. Esta empresa demuestra constantemente confiabilidad e integridad."
+      comment: "Verlässlich und glaubwürdig. Sie haben mein Vertrauen gewonnen. Dieses Unternehmen beweist konstant Integrität und Zuverlässigkeit."
       author: "/images/avatar/6.png"
       name: "Jane Smith"
-      designation: "Directora de Marketing"
+      designation: "Marketing-Direktorin"
       numbers:
         - suffix: "%"
           value: 49
-          subtitle: "Crecimiento en 3 meses"
+          subtitle: "Wachstum in 3 Monaten"
         - suffix: "k"
           value: 395
-          subtitle: "Usuarios Activos"
+          subtitle: "Aktive Nutzer"
   button:
     enable: true
-    label: "Get it for free"
+    label: "Jetzt kostenlos starten"
     link: "/pricing"
 
 more:
-  title: "Más beneficios que obtienes"
-  content: "Aquí tienes un eslogan llamativo que apoya el encabezado anterior mientras agrega un poco más de información."
+  title: "Weitere Vorteile, die du erhältst"
+  content: "Hier ist ein auffälliger Slogan, der die Überschrift unterstützt und zusätzliche Informationen liefert."
   points:
     - icon: "FaCube"
-      details: "Haz un impacto con el aspecto ultra-inteligente de Basko"
+      details: "Hinterlasse Eindruck mit dem ultra-intelligenten Look von Basko"
     - icon: "FaDatabase"
-      details: "Todo lo que necesitas para crear sitios web impactantes"
+      details: "Alles, was du brauchst, um beeindruckende Websites zu erstellen"
     - icon: "FaDisplay"
-      details: "Basko viene con el diseño completo en Figma"
+      details: "Basko kommt mit vollständigem Figma-Design"
+
+
+feature:
+  title: "Unsere Features für den Strategie-Workshop"
+  items:
+    - title: "Klare Zielgruppendefinition"
+      content: "Wir helfen Ihnen, Ihre idealen Kunden glasklar zu identifizieren."
+      icon: "FaUsers"
+    - title: "Content-Strategie mit Plan"
+      content: "Gemeinsam entwickeln wir eine durchdachte Struktur für Inhalte und Funnel."
+      icon: "FaFileAlt"
+    - title: "Messbare Ergebnisse"
+      content: "Mit Tracking und Analyse sehen Sie, was wirklich funktioniert."
+      icon: "FaChartLine"
+
+
 ---

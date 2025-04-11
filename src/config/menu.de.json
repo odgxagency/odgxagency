@@ -1,66 +1,38 @@
 {
   "main": [
     {
-      "name": "Seiten",
-      "url": "",
+      "name": "Leistungen",
+      "url": "/leistungen",
       "hasChildren": true,
       "children": [
         {
-          "name": "Startseite",
-          "url": "/"
+          "name": "Strategie-Workshop",
+          "url": "/strategie"
         },
         {
-          "name": "Preise",
+          "name": "Conversion-Website & Content",
           "url": "/pricing"
         },
         {
-          "name": "Team",
+          "name": "Expertenpositionierung",
           "url": "/about"
         },
         {
-          "name": "Features",
+          "name": "Tracking & Analytics",
           "url": "/features"
         },
         {
-          "name": "Erfahrungen",
+          "name": "CRM & Leadflow-Automatisierung",
           "url": "/review"
         },
         {
-          "name": "Blog",
-          "url": "/blog"
-        },
-        {
-          "name": "Kontakt",
-          "url": "/contact"
-        },
-        {
-          "name": "Cambios",
-          "url": "/changelog"
-        },
-        {
-          "name": "Demo",
-          "url": "/demo"
-        },
-        {
-          "name": "Integraciones",
-          "url": "/integration"
-        },
-        {
-          "name": "Términos",
+          "name": "Performance-Kampagnen",
           "url": "/terms"
-        },
-        {
-          "name": "Privacidad",
-          "url": "/privacy-policy"
-        },
-        {
-          "name": "404",
-          "url": "/404"
         }
       ]
     },
     {
-      "name": "Características",
+      "name": "Methode",
       "url": "/features"
     }
   ],

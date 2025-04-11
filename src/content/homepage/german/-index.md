@@ -25,7 +25,7 @@ hero:
     - "/images/homepage/clients/5.svg"
 
 feature:
-  - title: "Unldodck powerful tools to manage your finances"
+  - title: "cc powerful tools to manage your finances"
     content: "Our platform provides detailed insights and easy to understand analytics that help you make better decisions."
     images:
       - "/images/homepage/feature/1.png"
