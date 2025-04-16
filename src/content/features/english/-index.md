@@ -1,9 +1,9 @@
 ---
 title: "Features"
 meta_title: "This is features page"
-description: "This is description"
+description: "This is desscription"
 hero:
-  title: "Your all in one payment solution"
+  title: "Your all in one payments solution"
   content: "Gain valuable insights with our user-friendly analytics, designed to help you optimize your strategies and improve outcomes."
   features:
     - button: "Smart Budget Management"

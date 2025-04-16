@@ -25,6 +25,17 @@ const LanguageSwitcher = ({
     return path;
   };
 
+  // Mapping von Seiten zwischen Sprachen
+  const pathMap: Record<string, Record<string, string>> = {
+    "/en/strategy": {
+      de: "/strategie",
+    },
+    "/strategie": {
+      en: "/en/strategy",
+    },
+    // weitere Seiten hier eintragen
+  };
+
   // Sort languages by weight and filter out disabled languages
   const sortedLanguages = languages
     .filter(
@@ -59,20 +70,28 @@ const LanguageSwitcher = ({
         className="inline-block pl-9 pr-6 py-3.5 border border-text-gray focus:border-text-gray focus-visible:ring-transparent focus:outline-none rounded-[1.125rem] btn-outline-primary appearance-none cursor-pointer"
         onChange={(e) => {
           const selectedLang = e.target.value;
-          let newPath;
-          const baseUrl = window.location.origin;
+          const normalizedPath = removeTrailingSlash(pathname);
+          const targetPath = pathMap[normalizedPath]?.[selectedLang];
 
-          if (selectedLang === default_language) {
-            if (default_language_in_subdir) {
-              newPath = `${baseUrl}/${default_language}${removeTrailingSlash(pathname.replace(`/${lang}`, ""))}`;
-            } else {
-              newPath = `${baseUrl}${removeTrailingSlash(pathname.replace(`/${lang}`, ""))}`;
-            }
+          if (targetPath) {
+            window.location.href = targetPath;
           } else {
-            newPath = `/${selectedLang}${removeTrailingSlash(pathname.replace(`/${lang}`, ""))}`;
-          }
+            // fallback: bestehendes Verhalten
+            let newPath;
+            const baseUrl = window.location.origin;
 
-          window.location.href = newPath;
+            if (selectedLang === default_language) {
+              if (default_language_in_subdir) {
+                newPath = `${baseUrl}/${default_language}${removeTrailingSlash(pathname.replace(`/${lang}`, ""))}`;
+              } else {
+                newPath = `${baseUrl}${removeTrailingSlash(pathname.replace(`/${lang}`, ""))}`;
+              }
+            } else {
+              newPath = `/${selectedLang}${removeTrailingSlash(pathname.replace(`/${lang}`, ""))}`;
+            }
+
+            window.location.href = newPath;
+          }
         }}
         value={lang}
       >

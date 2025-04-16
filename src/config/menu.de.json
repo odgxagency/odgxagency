@@ -11,29 +11,29 @@
         },
         {
           "name": "Conversion-Website & Content",
-          "url": "/pricing"
+          "url": "/"
         },
         {
           "name": "Expertenpositionierung",
-          "url": "/about"
+          "url": "/"
         },
         {
           "name": "Tracking & Analytics",
-          "url": "/features"
+          "url": "/"
         },
         {
           "name": "CRM & Leadflow-Automatisierung",
-          "url": "/review"
+          "url": "/"
         },
         {
           "name": "Performance-Kampagnen",
-          "url": "/terms"
+          "url": "/"
         }
       ]
     },
     {
       "name": "Methode",
-      "url": "/features"
+      "url": "/"
     }
   ],
   "footer": [
