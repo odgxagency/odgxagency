@@ -51,8 +51,8 @@ if (wpPage?.acf?.hero_button_label && wpPage?.acf?.hero_button_link) {
 
 const hero = {
   title: wpPage?.acf?.hero_title || "Digital X Agency",
-  content: wpPage?.acf?.hero_content || "<p>Ihre B2b Agentur für Fintech und Business.</p>",
-  images: wpPage?.acf?.hero_images ? [wpPage.acf.hero_images.url] : [],
+  content: wpPage?.acf?.hero_content || "<p>Ihre B2b Agentur für Fintech und Business. Wir bringen digitale Strategien auf das nächste Level und verbinden innovative Technologien mit maßgeschneiderten Marketinglösungen. Vertrauen Sie auf unsere Expertise, um Ihre Marke im digitalen Raum erfolgreich zu positionieren.</p>",
+  images: wpPage?.acf?.hero_images ? [wpPage.acf.hero_images.url] : ["/images/herobsp.png"],
   buttons,
   client_logos: homepage[0].data.hero.client_logos,
 };
