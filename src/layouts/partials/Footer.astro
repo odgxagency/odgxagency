@@ -94,6 +94,9 @@ const call_to_action = await getSinglePage(
       set:html={markdownify(copyright)}
     />
   </div>
+
+
+
 </footer>
 
 <style>
@@ -103,3 +106,43 @@ const call_to_action = await getSinglePage(
     }
   }
 </style>
+
+
+
+<!-- Accessibility Font Size Controls -->
+<div class="fixed top-4 right-4 z-50 bg-white/90 p-2 rounded shadow-md font-sans text-sm flex items-center gap-2">
+  <button id="decrease-font" class="underline">A−</button>
+  <span id="font-size-display">16px</span>
+  <button id="increase-font" class="underline">A+</button>
+</div>
+
+<script is:inline>
+  document.addEventListener("DOMContentLoaded", () => {
+    const html = document.documentElement;
+    const display = document.getElementById("font-size-display");
+    const savedSize = localStorage.getItem("fontSize");
+    let currentSize = savedSize ? parseFloat(savedSize) : 16;
+
+    const applySize = () => {
+      html.style.fontSize = currentSize + "px";
+      display.textContent = currentSize + "px";
+      localStorage.setItem("fontSize", currentSize);
+    };
+
+    applySize();
+
+    document.getElementById("increase-font").addEventListener("click", () => {
+      if (currentSize < 24) {
+        currentSize += 2;
+        applySize();
+      }
+    });
+
+    document.getElementById("decrease-font").addEventListener("click", () => {
+      if (currentSize > 12) {
+        currentSize -= 2;
+        applySize();
+      }
+    });
+  });
+</script>
