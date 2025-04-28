@@ -1,23 +1,16 @@
 import React from "react";
-import YouTube from "react-youtube";
+import LiteYouTubeEmbed from "react-lite-youtube-embed"; // ❌ existiert nicht mehr
+import "react-lite-youtube-embed/dist/LiteYouTubeEmbed.css";
 
-type Props = {
-  id: string;
-  title: string;
+const Youtube = ({ id, title, ...rest }: { id: string; title: string; [key: string]: any; }) => {
+  return (
+    <LiteYouTubeEmbed
+      wrapperClass="yt-lite rounded-lg"
+      id={id}
+      title={title}
+      {...rest}
+    />
+  );
 };
 
-export default function Youtube({ id, title }: Props) {
-  const opts = {
-    width: "100%",
-    height: "390",
-    playerVars: {
-      autoplay: 0,
-    },
-  };
-
-  return (
-    <div className="overflow-hidden rounded-lg">
-      <YouTube videoId={id} opts={opts} />
-    </div>
-  );
-}
+export default Youtube;
