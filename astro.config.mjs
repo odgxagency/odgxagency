@@ -10,6 +10,7 @@ import remarkToc from "remark-toc";
 import sharp from "sharp";
 import config from "./src/config/config.json";
 import languagesJSON from "./src/config/language.json";
+import { fileURLToPath, URL } from 'node:url';
 const { default_language } = config.settings;
 
 const supportedLang = [...languagesJSON.map((lang) => lang.languageCode)];
@@ -35,7 +36,14 @@ export default defineConfig({
   base: config.site.base_path ? config.site.base_path : "/",
   trailingSlash: config.site.trailing_slash ? "always" : "ignore",
   image: { service: sharp() },
-  vite: { plugins: [tailwindcss()] },
+  vite: {
+    resolve: {
+      alias: {
+        '@': fileURLToPath(new URL('./src', import.meta.url))
+      }
+    },
+    plugins: [tailwindcss()]
+  },
   i18n: {
     locales: filteredSupportedLang,
     defaultLocale: default_language,
@@ -75,3 +83,5 @@ export default defineConfig({
     highlighter: getHighlighter,
   },
 });
+
+
