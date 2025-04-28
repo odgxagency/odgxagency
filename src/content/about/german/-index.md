@@ -1,14 +1,14 @@
 ---
-title: "Sobre Nosotros"
-meta_title: "esta es la página sobre nosotros"
-description: "esta es la meta descripción"
+title: "Über uns"
+meta_title: "Dies ist unsere Über-uns-Seite"
+description: "Dies ist die Meta-Beschreibung unserer Methode."
 hero:
-  title: "Estamos en una misión"
-  content: "En Sapick, creemos que gestionar tus finanzas debe ser sencillo y empoderador. Fundados con la misión de simplificar la gestión financiera."
+  title: "Unsere Methode"
+  content: "Bei ODGX glauben wir, dass Finanzmanagement einfach und empowernd sein sollte. Gegründet mit der Mission, die Finanzverwaltung zu vereinfachen."
   image_1: "/images/about/1.png"
   image_2: "/images/about/2.png"
   trust:
-    title: "Confiado por miles de empresas en todo el mundo"
+    title: "Vertrauenswürdig von tausenden Unternehmen weltweit"
     business:
       - "/images/homepage/clients/1.svg"
       - "/images/homepage/clients/2.svg"
