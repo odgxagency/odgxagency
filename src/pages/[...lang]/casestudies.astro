@@ -1,0 +1,108 @@
+---
+import Hero from "@/components/about/Hero.astro";
+import Feature from "@/components/home/Feature.astro";
+import Base from "@/layouts/Base.astro";
+import { supportedLang } from "@/lib/utils/languageParser";
+
+export function getStaticPaths() {
+  const paths = supportedLang.map((lang) => ({
+    params: { lang: lang || undefined },
+  }));
+  return paths;
+}
+
+const { lang } = Astro.params;
+
+const hero = {
+  title: lang === "en" ? "Our Case Studiesd" : "Unsere Fallstudien",
+  content: lang === "en"
+    ? "Discover how we helped companies achieve outstanding results."
+    : "Entdecken Sie, wie wir Unternehmen zu großartigen Ergebnissen verholfen haben.",
+  image_1: "/images/about/1.png",
+  image_2: "/images/about/2.png",
+  trust: {
+    title: "",
+    business: [],
+  },
+};
+// Your hardcoded feature array remains unchanged
+let feature;
+
+if (lang === "en") {
+  feature = [
+    {
+      title: "Intuitive Interface",
+      content: "Easy to use, even without prior knowledge.",
+      icon: "layout",
+      images: ["/images/homepage/feature/1.png"],
+      features: ["Drag & Drop", "Mobile ready", "Dark mode"],
+      button: {
+        label: "Learn more",
+        link: "/contact",
+      },
+    },
+    {
+      title: "Powerful Analytics",
+      content: "Keep track of everything with live dashboards.",
+      icon: "bar-chart",
+      images: ["/images/homepage/feature/2.png"],
+      features: ["Live reports", "Export to CSV", "Filtering"],
+      button: {
+        label: "To analytics",
+        link: "/analytics",
+      },
+    },
+    {
+      title: "Automations",
+      content: "Save time with intelligent automation.",
+      icon: "zap",
+      images: ["/images/homepage/feature/3.png"],
+      features: ["Workflows", "Notifications", "Triggers"],
+      button: {
+        label: "Automate now",
+        link: "/automate",
+      },
+    },
+  ];
+} else {
+  feature = [
+    {
+      title: "Intuitive Benutzeroberfläche",
+      content: "Einfach zu bedienen, auch ohne Vorkenntnisse.",
+      icon: "layout",
+      images: ["/images/homepage/feature/1.png"],
+      features: ["Drag & Drop", "Mobile ready", "Dunkelmodus"],
+      button: {
+        label: "Mehr erfahren",
+        link: "/kontakt",
+      },
+    },
+    {
+      title: "Leistungsstarke Analyse",
+      content: "Behalte alles im Blick – mit Live-Dashboards.",
+      icon: "bar-chart",
+      images: ["/images/homepage/feature/2.png"],
+      features: ["Live-Reports", "Export als CSV", "Filterfunktionen"],
+      button: {
+        label: "Zur Analyse",
+        link: "/analytics",
+      },
+    },
+    {
+      title: "Automatisierungen",
+      content: "Spare Zeit durch intelligente Automatisierung.",
+      icon: "zap",
+      images: ["/images/homepage/feature/3.png"],
+      features: ["Workflows", "Benachrichtigungen", "Trigger"],
+      button: {
+        label: "Automatisieren",
+        link: "/automate",
+      },
+    },
+  ];
+}
+---
+<Base title="Our Case Studies" meta_title="Case Studies - Sapick" description="Discover how Sapick helps companies achieve outstanding success.">
+  <Hero {hero} />
+  <Feature {feature} />
+</Base>
