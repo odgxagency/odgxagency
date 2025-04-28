@@ -93,16 +93,16 @@ more:
       details: "Basko kommt mit vollständigem Figma-Design"
 
 feature:
-  - title: "Klare Zielgruppendefinition"
-    content: "Wir helfen Ihnen, Ihre idealen Kunden glasklar zu identifizieren."
-    features:
-      - "Zielgruppensegmentierung"
-      - "Buyer Persona Entwicklung"
-    button:
-      label: "Mehr erfahren"
-      link: "/leistungen/strategie-workshop"
-    images:
-      - "/images/features/1.png"
-
-
+  title: "Unsere Features für den Strategie-Workshop"
+  items:
+    - title: "Klare Zielgruppendefinition"
+      content: "Wir helfen Ihnen, Ihre idealen Kunden glasklar zu identifizieren."
+      features:
+        - "Zielgruppensegmentierung"
+        - "Buyer Persona Entwicklung"
+      button:
+        label: "Mehr erfahren"
+        link: "/leistungen/strategie-workshop"
+      images:
+        - "/images/features/1.png"
 ---
