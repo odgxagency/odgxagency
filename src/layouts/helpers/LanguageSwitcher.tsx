@@ -25,13 +25,18 @@ const LanguageSwitcher = ({
     return path;
   };
 
-  // Mapping von Seiten zwischen Sprachen
   const pathMap: Record<string, Record<string, string>> = {
+    "/strategie": {
+      en: "/en/strategy",
+    },
     "/en/strategy": {
       de: "/strategie",
     },
-    "/strategie": {
-      en: "/en/strategy",
+    "/methode": {
+      en: "/en/method",
+    },
+    "/en/method": {
+      de: "/methode",
     },
     // weitere Seiten hier eintragen
   };

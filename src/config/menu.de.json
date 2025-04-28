@@ -38,6 +38,14 @@
     {
       "name": "Case Study",
       "url": "/casestudies"
+    },
+    {
+      "name": "Blog",
+      "url": "/blog"
+    },
+    {
+      "name": "Kontakt",
+      "url": "/kontakt"
     }
   ],
   "footer": [
