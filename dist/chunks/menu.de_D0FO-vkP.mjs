@@ -1,8 +1,0 @@
-const main = [{"name":"Leistungen","url":"/leistungen","hasChildren":true,"children":[{"name":"Strategie-Workshop","url":"/strategie"},{"name":"Conversion-Website & Content","url":"/"},{"name":"Expertenpositionierung","url":"/"},{"name":"Tracking & Analytics","url":"/"},{"name":"CRM & Leadflow-Automatisierung","url":"/"},{"name":"Performance-Kampagnen","url":"/"}]},{"name":"Methode","url":"/"}];
-const footer = [{"title":"Producto","children":[{"name":"Resumen","url":"/"},{"name":"Características","url":"/features"},{"name":"Soluciones","url":"/"}]},{"title":"Compañía","children":[{"name":"Acerca","url":"/about"},{"name":"Carreras","url":"/about"},{"name":"Prensa","url":"/about"}]},{"title":"Recursos","children":[{"name":"Blog","url":"/blog"},{"name":"Boletín","url":"/blog"},{"name":"Evento","url":"/about"}]},{"title":"Social","children":[{"name":"LinkedIn","url":"https://www.linkedin.com/"},{"name":"Facebook","url":"https://www.facebook.com/"},{"name":"Twitter","url":"https://twitter.com/"}]},{"title":"Legal","children":[{"name":"Términos","url":"/terms"},{"name":"Privacidad","url":"/privacy-policy"},{"name":"Cookies","url":"/"}]}];
-const menu_de = {
-  main,
-  footer,
-};
-
-export { menu_de as default, footer, main };
