@@ -1,7 +1,7 @@
 {
   "site": {
     "title": "ODGX Agency",
-    "base_url": "https://sapick-astro.vercel.app",
+    "base_url": "https://odgxagency.netlify.app/",
     "base_path": "/",
     "trailing_slash": false,
     "favicon": "/images/favicon.png",
@@ -29,7 +29,7 @@
 
   "announcement_bar": {
     "enable": true,
-    "text": "Get Sapick free account only for today, and get your money with referral code"
+    "text": "Marketing für Ihr FinTech Unternehmen."
   },
 
   "navigation_button": {

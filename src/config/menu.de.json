@@ -50,58 +50,58 @@
   ],
   "footer": [
     {
-      "title": "Producto",
+      "title": "Produkt",
       "children": [
         {
-          "name": "Resumen",
+          "name": "Übersicht",
           "url": "/"
         },
         {
-          "name": "Características",
+          "name": "Funktionen",
           "url": "/features"
         },
         {
-          "name": "Soluciones",
+          "name": "Lösungen",
           "url": "/"
         }
       ]
     },
     {
-      "title": "Compañía",
+      "title": "Unternehmen",
       "children": [
         {
-          "name": "Acerca",
+          "name": "Über uns",
           "url": "/about"
         },
         {
-          "name": "Carreras",
+          "name": "Karriere",
           "url": "/about"
         },
         {
-          "name": "Prensa",
+          "name": "Presse",
           "url": "/about"
         }
       ]
     },
     {
-      "title": "Recursos",
+      "title": "Ressourcen",
       "children": [
         {
           "name": "Blog",
           "url": "/blog"
         },
         {
-          "name": "Boletín",
+          "name": "Newsletter",
           "url": "/blog"
         },
         {
-          "name": "Evento",
+          "name": "Veranstaltung",
           "url": "/about"
         }
       ]
     },
     {
-      "title": "Social",
+      "title": "Social Media",
       "children": [
         {
           "name": "LinkedIn",
@@ -118,19 +118,15 @@
       ]
     },
     {
-      "title": "Legal",
+      "title": "Rechtliches",
       "children": [
         {
-          "name": "Términos",
+          "name": "AGBs",
           "url": "/terms"
         },
         {
-          "name": "Privacidad",
+          "name": "Datenschutz",
           "url": "/privacy-policy"
-        },
-        {
-          "name": "Cookies",
-          "url": "/"
         }
       ]
     }
