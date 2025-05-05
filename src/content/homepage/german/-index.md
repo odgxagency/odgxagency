@@ -25,72 +25,78 @@ hero:
     - "/images/homepage/clients/5.svg"
 
 feature:
-  - title: "cc powerful tools to manage your finances"
-    content: "Our platform provides detailed insights and easy to understand analytics that help you make better decisions."
+  - title: "Mit System zu mehr Anfragen."
+    content: "Viele Unternehmen investieren in Websites, Ads oder Tools aber ohne System dahinter. Die Digital X Funnel Methode bringt Klarheit, Struktur und ein Setup, das sichtbar, messbar und umsatzwirksam ist."
     images:
       - "/images/homepage/feature/1.png"
       - "/images/homepage/feature/2.png"
       - "/images/homepage/feature/3.png"
     features:
-      - "Plan smarter with real-time data."
-      - "Reach your goals faster with detailed tracking."
+      - "Strategisches Fundament"
+      - "Skalierbares Content-System"
+      - "Messbares Tracking-Setup"
+      - "CRM-gesteuerter Leadfluss"
+      - "Performance-Kampagnen mit Fokus auf Ergebnisse"
+
     button:
       enable: true
-      label: "Learn More"
+      label: "Mehr erfahren"
       link: "/features"
-  - title: "Send & transfer money to any bank or wallet instantly"
-    content: "Our system offers real-time data and actionable reports, empowering you to make informed business choices."
+  - title: "Transparenz für bessere Entscheidungen"
+    content: Wir messen jede relevante Interaktion entlang der Kundenreise von Klick bis Buchung. So wird Marketing endlich steuerbar."
     images:
       - "/images/homepage/feature/4.png"
     features:
-      - "Optimize Plans with Live Data"
-      - "Strategize with Real-Time Insights"
+      - "Funnel-Tracking mit GA4 & Hotjar"
+      - "DSGVO-konformes Server Side Tagging"
+      - "Klarer Measurement-Plan für TOFU → BOFU"
     button:
       enable: true
-      label: "Learn More"
+      label: "Mehr erfahren"
       link: "/features"
-  - title: "Track every report individually for better data analysis"
-    content: "Our solution delivers comprehensive analytics, allowing you to easily track performance and make smarter decisions."
+  - title: "Kein Lead bleibt mehr liegen."
+    content: "Wir integrieren euer CRM so, dass Leads automatisch erfasst, qualifiziert und wieder nutzbar gemacht werden. Tool-Basis: HubSpot Starter CRM"
     images:
       - "/images/homepage/feature/5.png"
     features:
-      - "Make Decisions with Current Data"
-      - "Real-Time Data for Smarter Moves"
+      - "Lead-Erfassung & Scoring"
+      - "Automatisiertes UTM-Tracking"
+      - "Rückspielung qualifizierter Leads an Google & Meta"
     button:
       enable: true
       label: "Learn More"
       link: "/features"
 
 video:
-  title: "See how Fintech helps in your daily life"
-  content: "Discover how fintech simplifies everyday tasks, from managing finances to making secure, instant payments. With easy-to-use apps, you can budget, invest, and track spending with just a few taps"
+  title: "So funktioniert datengetriebenes B2B-Marketing in der Praxis"
+  content: "Mit der Digital X Funnel Methode steuern wir euer Marketing nicht mehr nach Bauchgefühl, sondern auf Basis klarer Daten: Dashboards zeigen in Echtzeit, wie eure Website, CRM und Kampagnen performen – und wo Optimierungspotenzial liegt."
   video:
     cover: "/images/home/video/video-cover.png"
     link: "/images/home/video/video.mp4"
   stats:
-    - key: "Active Users"
+    - key: "analysierte Nutzerinteraktionen"
       value: 340
       suffix: "K"
-    - key: "Fintch Monthly Transaction"
+    - key: "monatlich gemessene Werbebudgets"
       value: 1.5
       prefix: "$"
       suffix: "M+"
-    - key: "Company Partner"
+    - key: "getestete Funnel-Kampagnenstrukturen"
       value: 170
       suffix: "+"
-    - key: "App Downloaded"
+    - key: "getrackte Events pro Monat"
       value: 560
       suffix: "K+"
 reason:
-  title: "Reasons you must <br> get Finaco today."
+  title: "Kampagnen, die Ergebnisse liefern."
   points:
-    - title: "Sapick For Your Budgeting Tools"
-      content: "Automatically track your income and expenses, helping you create personalized budgets and stay on top of your financial goals"
+    - title: "Kampagnen mit Plan, statt „Try & Error“"
+      content: "Unsere Paid-Media-Strategie basiert auf echten Funnel-Daten, nicht auf Bauchgefühl. Wir wissen, wann eure Zielgruppe sucht – und wo wir sie am besten erreichen."
       image: "/images/homepage/reasons/1.png"
-    - title: "For All Your Digital Payments"
-      content: "Effortlessly send money or pay bills in real time, ensuring secure transactions without the need for physical cash."
+    - title: "Für jede Funnelstufe der passende Kanal"
+      content: "Google Ads für akute Suchintention, LinkedIn für Vertrauen, Meta & Native Ads für Reichweite: Wir spielen jeden Kanal gezielt aus – mit klarer Zielsetzung."
       image: "/images/homepage/reasons/2.png"
-    - title: "One Solution For Your Financial & Inevestment"
-      content: "Access a wide range of investment options such as stocks, mutual funds, and cryptocurrencies, all through a user-friendly platform"
+    - title: "Smarter mit jedem Monat: CRM-Feedback → Ads"
+      content: "Durch die Rückkopplung aus dem CRM optimieren wir eure Kampagnen kontinuierlich. So wird euer Anfragesystem immer präziser – und euer Werbebudget effizienter genutzt."
       image: "/images/homepage/reasons/3.png"
 ---
