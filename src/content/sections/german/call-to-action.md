@@ -1,7 +1,7 @@
 ---
-title: "Ready to manage finance easily?"
+title: "Bereit für planbare Anfragen?"
 button:
   enable: true
-  label: "Get Started for Free"
+  label: "Jetzt kostenlos starten"
   link: "/contact"
 ---

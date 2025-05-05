@@ -1,24 +1,26 @@
 ---
-title_1: "Have a question?"
-title_2: "We are here to answer."
+title_1: "Häufige Fragen zur Digital X Funnel Methode"
+title_2: "Klar beantwortet – für fundierte Entscheidungen."
 faqs:
-  - question: "What features does Sapick offer?"
-    answer: "Automatically track your income and expenses, helping you create personalized budgets and stay on top of your financial goals"
-  - question: "How can Sapick benefit my organization?"
-    answer: "Sapick streamlines your financial operations by automating invoicing, expense tracking, and reporting, allowing your team to focus on growth and strategy."
-  - question: "Is Sapick suitable for small businesses or large enterprises?"
-    answer: "Sapick is designed to scale effortlessly, providing tailored solutions for both small businesses and large enterprises, ensuring seamless financial management at every stage."
-  - question: "Is Sapick customizable to fit our specific needs?"
-    answer: "With its flexible features and modular design, Sapick can be customized to meet the unique financial requirements of your organization, ensuring a perfect fit."
-  - question: "How secure is the data stored on Sapick?"
-    answer: "Your data is protected with advanced encryption and multi-factor authentication, ensuring that sensitive financial information remains secure and accessible only to authorized users."
-  - question: "How secure is Sapick?"
-    answer: "Sapick employs industry-leading security measures, including end-to-end encryption and regular vulnerability assessments, to ensure the highest level of protection for your data."
+  - question: "Was ist die Digital X Funnel Methode?"
+    answer: "Unsere Methode ist ein ganzheitlicher Ansatz, der eure Website, CRM und Kampagnen zu einem messbaren Anfragesystem verbindet – Schritt für Schritt, datenbasiert und skalierbar."
+
+  - question: "Wie schnell sehen wir erste Ergebnisse?"
+    answer: "Bereits nach dem Funnel-Workshop (Phase 0) habt ihr einen klaren Maßnahmenplan. Erste Leads über die neue Plattform sind oft nach 4–6 Wochen möglich."
+
+  - question: "Für welche Unternehmen ist die Methode geeignet?"
+    answer: "Unsere Methode ist besonders wirksam für B2B-Unternehmen im Tech-, SaaS- oder Dienstleistungsbereich – von Startups bis Mittelstand."
+
+  - question: "Müssen wir unser bestehendes CRM oder CMS wechseln?"
+    answer: "Nein. Wir integrieren bestehende Systeme (z. B. WordPress, HubSpot oder Webflow) und holen das Beste aus euren Tools heraus – DSGVO-konform."
+
+  - question: "Wie läuft die Zusammenarbeit ab?"
+    answer: "Wir starten mit einem Workshop, dann bauen wir gemeinsam Schritt für Schritt euer Setup auf. Alles transparent, mit klaren Meilensteinen und regelmäßigen Check-ins."
 
 contact:
-  title: "Still confuse? no need to worry, just contact us"
+  title: "Noch Fragen? Wir sind nur einen Klick entfernt."
   button:
     enable: true
-    label: "Contact our support"
+    label: "Jetzt Support kontaktieren"
     link: "/contact"
 ---

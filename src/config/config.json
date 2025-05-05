@@ -1,6 +1,6 @@
 {
   "site": {
-    "title": "ODGX Agency",
+    "title": "ODGX Agency - Marketing für FinTech Unternehmen",
     "base_url": "https://odgxagency.netlify.app/",
     "base_path": "/",
     "trailing_slash": false,
@@ -29,7 +29,7 @@
 
   "announcement_bar": {
     "enable": true,
-    "text": "Marketing für Ihr FinTech Unternehmen."
+    "text": "Jetzt kostenlosen Funnel-Check sichern – und mehr aus Ihrer Website herausholen."
   },
 
   "navigation_button": {
