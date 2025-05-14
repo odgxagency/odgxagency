@@ -3,28 +3,28 @@ title: "Strategie-Workshop"
 meta_title: "Dies ist die Seite für Funktionen"
 description: "Dies ist eine Beschreibung"
 hero:
-  title: "Strategie-Workshop"
-  content: "Klarheit schaffen über Zielgruppen, Content-Strategie und passende Funnel-Struktur"
+  title: "Strategie X - Workshop"
+  content: " Wir schaffen die Basis, die viele überspringen – für B2B Unternehmen, die Leadgenerierung endlich strategisch denken wollen. <br><br>🎯 Zielgruppe, USP & Funnelstruktur definieren <br>🧠 Workshop mit erfahrenen Strateg:innen <br>📄 Ergebnis: Die Basisinformationen für Website, Content & Ads <br>🚀 Ideal für B2B Finanzdienstleister, erklärungsbedürftigen Produkten"
   features:
-    - button: "Intelligente Budgetverwaltung"
-      title: "Verwalte dein Budget mit unserer intelligenten KI-Lösung."
-      content: "Verfolge automatisch deine Einnahmen und Ausgaben, erstelle personalisierte Budgets und erreiche deine finanziellen Ziele."
+    - button: "Zielgruppenanalyse"
+      title: "Verstehen, wer dein Kunde ist und was dessen Problem ist."
+      content: "Text hier noch einfügen."
       image: "/images/features/1.png"
       link:
         enable: true
         label: "Mehr erfahren"
         link: "#"
-    - button: "Vollständig digitale Zahlungen"
-      title: "Sende und überweise Geld sofort an jede Bank oder E-Wallet"
-      content: "Unsere Plattform bietet verständliche Einblicke und Analysen, um bessere Entscheidungen zu treffen."
+    - button: "Alleinstellungsmerkmal"
+      title: "Was macht dich und deine Lösung für das Problem einzigartig?"
+      content: "Text hier noch einfügen."
       image: "/images/features/2.png"
       link:
         enable: true
         label: "Mehr erfahren"
         link: "#"
-    - button: "Dynamische Berichte"
+    - button: "Customer Journey"
       title: "Verfolge jeden Bericht einzeln für bessere Datenanalysen"
-      content: "Unsere Plattform bietet detaillierte Einblicke und leicht verständliche Analysen, die dir helfen, bessere Entscheidungen zu treffen."
+      content: "Text hier noch einfügen."
       image: "/images/features/3.png"
       link:
         enable: true
