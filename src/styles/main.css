@@ -69,3 +69,24 @@
   color: var(--color-text);
 }
 
+.dark .navbar.container {
+  background-color: #121212; /* example: Tailwind's gray-900 */
+}
+
+
+/* Dark Mode Language Switcher */
+
+.dark .mr-5.relative.block {
+  color: #222;
+}
+
+html.dark select[aria-label="Language Switcher"] {
+   color: #222;
+}
+
+
+/* Kampagnen, die Ergebnisse liefern */
+
+html.dark [data-card-content]:first-of-type {
+  background-color: rgb(186, 184, 184);
+}
