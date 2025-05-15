@@ -38,7 +38,7 @@ hero:
         link: "#"
 
 benefit:
-  title: "Weitere Vorteile, die du erhältst"
+  title: "Branchen"
   content: "Unser System bietet Echtzeitdaten und umsetzbare Berichte, sodass du fundierte Geschäftsentscheidungen treffen kannst."
   benefits:
     - title: "Produktanalyse"
@@ -55,8 +55,8 @@ benefit:
         - "Wachstum durch umsetzbare Einblicke fördern."
 
 trust:
-  title: "Vertraut von über 15.000 Kunden"
-  content: "Erhalte wertvolle Einblicke mit unseren benutzerfreundlichen Analysen, die dir helfen, deine Strategien zu optimieren und Ergebnisse zu verbessern."
+  title: "Vertraut von starken Marken"
+  content: "Strategie ist Vertrauenssache, besonders im B2B. Darum lassen wir andere sprechen: Kunden, die vorher unsicher waren. Und jetzt mit Plan wachsen."
   stats:
     - company: "/images/testimonial/11.svg"
       comment: "Zuverlässig und vertrauenswürdig. Sie haben mein Vertrauen und meine Loyalität gewonnen. Dieses Unternehmen zeigt konstant Verlässlichkeit und Ehrlichkeit."
@@ -88,15 +88,15 @@ trust:
     link: "/pricing"
 
 more:
-  title: "Weitere Vorteile, die du erhältst"
+  title: "Branchen"
   content: "Hier ist ein auffälliger Slogan, der die Überschrift unterstützt und zusätzliche Informationen liefert."
   points:
     - icon: "FaCube"
-      details: "Hinterlasse Eindruck mit dem ultra-intelligenten Look von Basko"
+      details: "Finanzdienstleister<br><br><h5>Problem:</h5> <p style='font-weight:light;text-align: center'>Komplexe Leistungen, lange Entscheidungswege, wenig Differenzierung.</p><h5>Lösung:</h5> <p style='font-weight:light;text-align: center'> Wir schärfen USP & Positionierung, mappen den Funnel auf reale Entscheidungslogiken und liefern einen Plan, der Vertrauen aufbaut.</p>"
     - icon: "FaDatabase"
-      details: "Alles, was du brauchst, um beeindruckende Websites zu erstellen"
+      details: "MedTech & Healthcare B2B<br><br><h5>Problem:</h5> <p style='font-weight:light;text-align: center'>Hoher Regulierungsdruck, erklärungsbedürftige Produkte, Kaufentscheidungen durch Komitees.</p><h5>Lösung:</h5> <p style='font-weight:light;text-align: center'> Wir bauen Vertrauen durch Content, strukturieren den Sales Funnel nach klinischen/stakeholder-spezifischen Journeys und liefern Templates für wiederkehrende Verkaufszyklen.</p>"
     - icon: "FaDisplay"
-      details: "Basko kommt mit vollständigem Figma-Design"
+      details: "SaaS & Tech-Anbieter (B2B)<br><br><h5>Problem:</h5> <p style='font-weight:light;text-align: center'>Viele Funktionen, aber wenig Klarheit im Nutzenversprechen. Marketing ist oft zu technisch.</p><br><h5>Lösung:</h5> <p style='font-weight:light;text-align: center'> Wir übersetzen Features in Business Value, entwickeln eine Funnelstruktur mit klarer Conversion-Logik und helfen, komplexe Produkte einfach zu verkaufen..</p>"
 
 feature:
   - title: "Klare Zielgruppendefinition"
