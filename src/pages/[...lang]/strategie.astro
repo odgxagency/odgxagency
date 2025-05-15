@@ -5,7 +5,7 @@ import Trust from "@/components/features/Trust.astro";
 import Feature from "@/components/home/Feature.astro";
 import ClientLogos from "@/components/ClientLogos.astro";
 import Reasons from "@/components/home/Reasons.astro";
-
+import Faq from "@/components/Faq.astro";
 
 
 import Base from "@/layouts/Base.astro";
@@ -119,6 +119,18 @@ if (lang === "en") {
 
   {reason && <Reasons {reason} />}
 
+
+   <Faq />
+ <section class="w-full py-12 text-center">
+    <h2 class="mb-6">Deine Vorteile auf einen Blick</h2>
+    
+    <ul>
+    <li class="mb-4 last:mb-0 flex items-center justify-center font-medium text-xl text-center"> <svg width="1em" height="1em" viewBox="0 0 24 24" data-icon="arrow-right">   <use href="#ai:local:arrow-right"></use>  </svg> </span> Klarer Plan statt Aktionismus </li>
+     <li class="mb-4 last:mb-0 flex items-center justify-center font-medium text-xl text-center"> <svg width="1em" height="1em" viewBox="0 0 24 24" data-icon="arrow-right">   <use href="#ai:local:arrow-right"></use>  </svg> </span> Fokus auf Leads & Umsatz, nicht nur Reichweite</li>
+     <li class="mb-4 last:mb-0 flex items-center justify-center font-medium text-xl text-center"> <svg width="1em" height="1em" viewBox="0 0 24 24" data-icon="arrow-right">   <use href="#ai:local:arrow-right"></use>  </svg> </span> Experten aus B2B SaaS, Tech & Beratung</li>
+     <li class="mb-4 last:mb-0 flex items-center justify-center font-medium text-xl text-center"> <svg width="1em" height="1em" viewBox="0 0 24 24" data-icon="arrow-right">   <use href="#ai:local:arrow-right"></use>  </svg> </span> Kein Bla Bla – nur umsetzbare Strategie</li>
+    </ul>
+    </section>
 
   
 </Base>
