@@ -195,8 +195,19 @@ const featuresCollection = defineCollection({
         }),
       ),
     }),
+    reason: z.object({
+      title: z.string(),
+      points: z.array(
+        z.object({
+          title: z.string(),
+          content: z.string(),
+          image: z.string(),
+        }),
+      ),
+    }).optional(),
   }),
 });
+
 
 const pricingCollection = defineCollection({
   loader: glob({ pattern: "**/*.{md,mdx}", base: "src/content/pricing" }),

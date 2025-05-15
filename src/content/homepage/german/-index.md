@@ -87,16 +87,18 @@ video:
     - key: "getrackte Events pro Monat"
       value: 560
       suffix: "K+"
+      
 reason:
-  title: "Kampagnen, die Ergebnisse liefern."
+  title: "Why work with us?"
   points:
-    - title: "Kampagnen mit Plan, statt „Try & Error“"
-      content: "Unsere Paid-Media-Strategie basiert auf echten Funnel-Daten, nicht auf Bauchgefühl. Wir wissen, wann eure Zielgruppe sucht – und wo wir sie am besten erreichen."
-      image: "/images/homepage/reasons/1.png"
-    - title: "Für jede Funnelstufe der passende Kanal"
-      content: "Google Ads für akute Suchintention, LinkedIn für Vertrauen, Meta & Native Ads für Reichweite: Wir spielen jeden Kanal gezielt aus – mit klarer Zielsetzung."
-      image: "/images/homepage/reasons/2.png"
-    - title: "Smarter mit jedem Monat: CRM-Feedback → Ads"
-      content: "Durch die Rückkopplung aus dem CRM optimieren wir eure Kampagnen kontinuierlich. So wird euer Anfragesystem immer präziser – und euer Werbebudget effizienter genutzt."
-      image: "/images/homepage/reasons/3.png"
+    - title: "Experienced Strategists"
+      content: "We bring deep experience from B2B and Fintech projects."
+      image: "/images/icons/strategy1.svg"
+    - title: "Proven Frameworks"
+      content: "We follow structured processes that actually work."
+      image: "/images/icons/strategy2.svg"
+    - title: "Sustainable Growth"
+      content: "Our plans scale with your business."
+      image: "/images/icons/strategy3.svg"
+
 ---

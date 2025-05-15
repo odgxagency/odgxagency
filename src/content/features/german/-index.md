@@ -110,6 +110,19 @@ feature:
     images:
       - "/images/features/1.png"
 
+reason:
+  title: "Branchen - Mit wem arbeiten wir?"
+  points:
+    - title: "Finanzdienstleister"
+      content: "<strong>Problem: </strong>Komplexe Leistungen, lange Entscheidungswege, wenig Differenzierung. <strong>Lösung</strong>: Wir schärfen USP & Positionierung, mappen den Funnel auf reale Entscheidungslogiken und liefern einen Plan, der Vertrauen aufbaut."
+      image: "/images/homepage/reasons/1.png"
+    - title: "MedTech & Healthcare B2B"
+      content: "<strong>Problem: </strong>Hoher Regulierungsdruck, erklärungsbedürftige Produkte, Kaufentscheidungen durch Komitees. <strong>Lösung</strong>: Wir bauen Vertrauen durch Content, strukturieren den Sales Funnel nach klinischen/stakeholder-spezifischen Journeys und liefern Templates für wiederkehrende Verkaufszyklen."
+      image: "/images/homepage/reasons/2.png"
+    - title: "SaaS & Tech-Anbieter (B2B)"
+      content: "<strong>Problem: </strong>Viele Funktionen, aber wenig Klarheit im Nutzenversprechen. Marketing ist oft zu technisch. <strong>Lösung</strong>: Wir übersetzen Features in Business Value, entwickeln eine Funnelstruktur mit klarer Conversion-Logik und helfen, komplexe Produkte einfach zu verkaufen."
+      image: "/images/homepage/reasons/3.png"
+
 
 
 

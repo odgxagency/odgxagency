@@ -259,6 +259,42 @@
           ],
           "additionalProperties": false
         },
+        "reason": {
+          "type": "object",
+          "properties": {
+            "title": {
+              "type": "string"
+            },
+            "points": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "title": {
+                    "type": "string"
+                  },
+                  "content": {
+                    "type": "string"
+                  },
+                  "image": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "title",
+                  "content",
+                  "image"
+                ],
+                "additionalProperties": false
+              }
+            }
+          },
+          "required": [
+            "title",
+            "points"
+          ],
+          "additionalProperties": false
+        },
         "$schema": {
           "type": "string"
         }
