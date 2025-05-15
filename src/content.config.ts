@@ -204,7 +204,7 @@ const featuresCollection = defineCollection({
           image: z.string(),
         }),
       ),
-    }).optional(),
+    }),
   }),
 });
 
