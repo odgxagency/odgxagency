@@ -133,6 +133,7 @@ const featuresCollection = defineCollection({
     hero: z.object({
       title: z.string(),
       content: z.string(),
+      client_logos: z.array(z.string()).optional(), // ✅ ADD THIS LINE
       features: z.array(
         z.object({
           button: z.string(),

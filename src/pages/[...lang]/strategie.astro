@@ -4,6 +4,8 @@ import Hero from "@/components/features/Hero.astro";
 import More from "@/components/features/More.astro";
 import Trust from "@/components/features/Trust.astro";
 import Feature from "@/components/home/Feature.astro";
+import ClientLogos from "@/components/ClientLogos.astro";
+
 import Base from "@/layouts/Base.astro";
 import { getListPage } from "@/lib/contentParser.astro";
 import { supportedLang } from "@/lib/utils/languageParser";
@@ -102,13 +104,21 @@ if (lang === "en") {
 }
 
 
-
+console.log("LOGOS:", hero.client_logos); // 👈 Add this here
 ---
 
 
 
 <Base title={title} meta_title={meta_title} description={description}>
   <Hero {hero} />
+
+<ClientLogos
+  logos={hero.client_logos}
+  title="Vertraut von starken Marken"
+  description="Strategie ist Vertrauenssache, besonders im B2B. Darum lassen wir andere sprechen: Kunden, die vorher unsicher waren. Und jetzt mit Plan wachsen."
+/>
+
+
   <Benefits {benefit} />
   <Feature {feature} />
   <Trust {trust} />

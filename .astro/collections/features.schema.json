@@ -22,6 +22,12 @@
             "content": {
               "type": "string"
             },
+            "client_logos": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
             "features": {
               "type": "array",
               "items": {

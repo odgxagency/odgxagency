@@ -5,6 +5,12 @@ description: "Dies ist eine Beschreibung"
 hero:
   title: "Strategie X - Workshop"
   content: " Wir schaffen die Basis, die viele überspringen – für B2B Unternehmen, die Leadgenerierung endlich strategisch denken wollen. <br><br>🎯 Zielgruppe, USP & Funnelstruktur definieren <br>🧠 Workshop mit erfahrenen Strateg:innen <br>📄 Ergebnis: Die Basisinformationen für Website, Content & Ads <br>🚀 Ideal für B2B Finanzdienstleister, erklärungsbedürftigen Produkten"
+  client_logos:
+    - "/images/homepage/clients/1.svg"
+    - "/images/homepage/clients/2.svg"
+    - "/images/homepage/clients/3.svg"
+    - "/images/homepage/clients/4.svg"
+    - "/images/homepage/clients/5.svg"
   features:
     - button: "Zielgruppenanalyse"
       title: "Verstehen, wer dein Kunde ist und was dessen Problem ist."
@@ -103,6 +109,8 @@ feature:
       link: "/leistungen/strategie-workshop"
     images:
       - "/images/features/1.png"
+
+
 
 
 ---

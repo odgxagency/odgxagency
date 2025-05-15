@@ -1,0 +1,47 @@
+---
+// src/components/ClientLogos.astro
+import ImageMod from "@/components/ImageMod.astro";
+
+interface Props {
+  logos?: string[];
+  title?: string;
+  description?: string;
+}
+
+const { logos, title, description } = Astro.props;
+---
+
+{logos && logos.length > 0 && (
+  <section class="w-full py-12 text-center">
+{title && (
+    <h2 class="text-3xl md:text-4xl font-bold text-default mb-4 leading-tight">
+      {title}
+    </h2>
+  )}
+  {description && (
+    <p class="text-lg md:text-xl text-muted max-w-2xl mx-auto mb-10 leading-relaxed">
+      {description}
+    </p>
+  )}
+
+    <div
+      class="border-y border-border backdrop-blur-[80px] w-full"
+      data-aos="fade-up-sm"
+    >
+      <div class="flex max-md:flex-wrap justify-center items-center mx-auto md:w-3/4 lg:1/2 xl:w-full">
+        {logos.map((item: string) => (
+          <div class="max-md:w-1/2 md:first:border-l md:border-r md:border-border px-4 xl:px-7 py-6 xl:py-9">
+            <ImageMod
+              class="mx-auto grayscale opacity-50"
+              src={item}
+              alt="logo"
+              width={179}
+              height={48}
+              format="webp"
+            />
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+)}
