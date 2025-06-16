@@ -4,7 +4,7 @@ meta_title: "Dies ist die Seite für Funktionen"
 description: "Dies ist eine Beschreibung"
 hero:
   title: "Funnel X - Workshop"
-  content: "Ihr Startpunkt für strkturierte Kudengewinnung. <br><br>Gemeinsam erarbeiten wir die strategische Grundlage für Marketing, das funktioniert – mit klarer Zielgruppe und darauf basierenden Alleinstellungsmerkmalen, durchdachtem Funnel & einem strukturierten Plan zur Umsetzung."
+  content: "Ihr Startpunkt für strkturierte Kundengewinnung. <br><br>Gemeinsam erarbeiten wir die strategische Grundlage für Marketing, das funktioniert – mit klarer Zielgruppe und darauf basierenden Alleinstellungsmerkmalen, durchdachtem Funnel & einem strukturierten Plan zur Umsetzung."
   client_logos:
     - "/images/homepage/clients/1.svg"
     - "/images/homepage/clients/2.svg"
