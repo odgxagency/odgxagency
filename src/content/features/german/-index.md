@@ -3,8 +3,8 @@ title: "Strategie-Workshop"
 meta_title: "Dies ist die Seite für Funktionen"
 description: "Dies ist eine Beschreibung"
 hero:
-  title: "Strategie X - Workshop"
-  content: " Wir schaffen die Basis, die viele überspringen – für B2B Unternehmen, die Leadgenerierung endlich strategisch denken wollen. <br><br>🎯 Zielgruppe, USP & Funnelstruktur definieren <br>🧠 Workshop mit erfahrenen Strateg:innen <br>📄 Ergebnis: Die Basisinformationen für Website, Content & Ads <br>🚀 Ideal für B2B Finanzdienstleister, erklärungsbedürftigen Produkten"
+  title: "Funnel X - Workshop"
+  content: "Ihr Startpunkt für strkturierte Kudengewinnung. <br><br>Gemeinsam erarbeiten wir die strategische Grundlage für Marketing, das funktioniert – mit klarer Zielgruppe und darauf basierenden Alleinstellungsmerkmalen, durchdachtem Funnel & einem strukturierten Plan zur Umsetzung."
   client_logos:
     - "/images/homepage/clients/1.svg"
     - "/images/homepage/clients/2.svg"
