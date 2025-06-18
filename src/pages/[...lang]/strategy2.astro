@@ -3,6 +3,7 @@ import Feature    from "@/components/home/Feature.astro";
 import Hero       from "@/components/home/Hero.astro";
 import Reasons    from "@/components/home/Reasons.astro";
 import Video      from "@/components/home/Video.astro";
+import Experience    from "@/components/about/Experience.astro";
 import Base       from "@/layouts/Base.astro";
 import type { ContentEntryMap } from "astro:content";
 import { getListPage, getSinglePage } from "@/lib/contentParser.astro";
@@ -175,6 +176,47 @@ const integrations = [
     button:  { enable: true, link: "/kontakt",             label: "Kontakt aufnehmen" },
   },
 ];
+
+
+
+// ─── hard‐coded experience section ────────────────────
+const experience = {
+  title: "Was andere über den FunnelX Workshop sagen",
+  cards: [
+    {
+      image:   "/images/features/1.png",
+      title:   "Pilot-Workshops",
+      content: "Erste 10 Testsessions zusammen mit Pionier-Unternehmen im Jahr 2020.",
+    },
+    {
+      image:   "/images/features/1.png",
+      // this becomes the large middle image
+      title:   "Über 200 Workshops",
+      content: "Online & vor Ort seit 2020—mit durchweg positiver Resonanz.",
+    },
+    {
+      image:   "/images/features/1.png",
+      value:   200,
+      suffix:  "+",
+      title:   "„Dank des Workshops wussten wir endlich, wo unsere Website blockiert – und wie wir gezielter Leads gewinnen. Die Klarheit über unsere Zielgruppe hat vieles verändert.“– Marketing-Leiterin, B2B-Unternehmen",
+      content: "",
+    },
+    {
+      image:   "/images/features/1.png",
+      value:   50,
+      suffix:  "+",
+      title:   "Unternehmen",
+      content: "„Dank des Workshops wussten wir endlich, wo unsere Website blockiert – und wie wir gezielter Leads gewinnen. Die Klarheit über unsere Zielgruppe hat vieles verändert.“– Marketing-Leiterin, B2B-Unternehmen",
+    },
+    {
+      image:   "/images/features/1.png",
+      value:   95,
+      suffix:  "%",
+      title:   "Zufriedenheit",
+      content: "Durchschnittliche Teilnehmer-Zufriedenheit.",
+    },
+  ],
+};
 ---
 
 <Base>
@@ -245,6 +287,9 @@ const integrations = [
     </div>
   </section>
   <!-- ──────────────────────────────────────────────────── -->
+
+   <!-- Experience section re-used  -->
+  <Experience {experience} />
 
 </Base>
 
