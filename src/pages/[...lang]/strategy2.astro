@@ -1,0 +1,257 @@
+---
+import Feature    from "@/components/home/Feature.astro";
+import Hero       from "@/components/home/Hero.astro";
+import Reasons    from "@/components/home/Reasons.astro";
+import Video      from "@/components/home/Video.astro";
+import Base       from "@/layouts/Base.astro";
+import type { ContentEntryMap } from "astro:content";
+import { getListPage, getSinglePage } from "@/lib/contentParser.astro";
+import { getLangFromUrl, supportedLang }   from "@/lib/utils/languageParser";
+
+// generate all language variants
+export function getStaticPaths() {
+  return supportedLang.map((lang) => ({
+    params: { lang: lang || undefined },
+  }));
+}
+
+const { lang } = Astro.params;
+const language = lang || getLangFromUrl(Astro.url);
+
+// load homepage data (only for video)
+const video = {
+  title:   "<strong>So läuft der Workshop ab</strong>",
+  content: "Format: 1 Tag (online oder vor Ort), aufgeteilt in zwei fokussierte Sessions. Teilnehmer: Geschäftsführung, Marketing, ggf. Vertrieb – also alle, die Einfluss auf Strategie & Kommunikation haben",
+  stats: [
+    { key: "Teilnehmer",       value: 120, prefix: "",  suffix: "+" },
+    { key: "Unternehmen",      value:  85, prefix: "",  suffix: ""  },
+    { key: "Stunden Workshop", value:   8, prefix: "",  suffix: ""  },
+    { key: "Erfolgsquote",     value:  95, prefix: "",  suffix: "%" },
+  ],
+};
+
+// fetch WP page for hero
+const wpSlug = lang === "en" ? "homepage-en" : "homepage-de";
+const auth   = btoa(`adjective:marvelous`);
+const res    = await fetch(
+  `https://next-boats.localsite.io/wp-json/wp/v2/pages?slug=${wpSlug}`,
+  { headers: { Authorization: `Basic ${auth}` } }
+);
+const data   = await res.json();
+const wpPage = data[0] || null;
+
+// build hero props
+const buttons = [
+  { label: "Kostenloses Erstgespräch", link: "/kontakt" },
+  { label: "Mehr erfahren",          link: "/learn-more" },
+];
+
+const hero = {
+  title: wpPage?.acf?.hero_title || "FunnelX Workshop",
+  content:
+    wpPage?.acf?.hero_content ||
+    `<p><strong>Ihr Startpunkt für strukturierte Kundengewinnung.</strong>
+      Gemeinsam erarbeiten wir die strategische Grundlage für Marketing, 
+      das funktioniert – mit klarer Zielgruppe und darauf basierenden 
+      Alleinstellungsmerkmalen, durchdachtem Funnel & einem strukturierten Plan zur Umsetzung.</p>`,
+  images: wpPage?.acf?.hero_images
+    ? [wpPage.acf.hero_images.url]
+    : ["/images/herobsp.png"],
+  buttons,
+  client_logos: [], // hide logos
+};
+
+// load testimonials
+const testimonialData = await getSinglePage(
+  "testimonialSection",
+  lang as keyof ContentEntryMap,
+  "testimonial"
+);
+const testimonial = testimonialData.length ? testimonialData : [];
+
+// ─── hard-coded reasons section ────────────────────
+const reasonsList = [
+  {
+    title:   "Strategisch statt reaktiv",
+    content: "Kein Bauchgefühl-Marketing mehr, sondern fundierte Entscheidungslogiken.",
+  },
+  {
+    title:   "Kompakt & effizient",
+    content: "Ein klarer Plan – erarbeitet in nur einem Tag.",
+  },
+  {
+    title:   "Individuell statt generisch",
+    content: "Keine Templates, sondern konkrete Inhalte für Ihr Business.",
+  },
+];
+const reason = {
+  title: "Was den FunnelX besonders macht",
+  intro: "Viele Agenturen verkaufen Taktiken – wir schaffen Strategie. Der FunnelX-Workshop bringt nicht nur Klarheit, sondern liefert ein durchdachtes System, auf das Ihr Marketing langfristig aufbauen kann.",
+  points: reasonsList,
+};
+
+// ─── hard-coded features section ────────────────────
+const feature = [
+  {
+    title:   "Was Sie im FunnelX Workshop erwartet",
+    content: "In einem Tag entwickeln wir gemeinsam die strategische Basis für Ihr Marketing – konkret, strukturiert, umsetzbar.<br><strong>Das erarbeiten wir mit Ihnen:</strong>",
+    features: [
+      "Wer Ihre Zielgruppe wirklich ist",
+      "Was Ihr Angebot relevant und unterscheidbar macht",
+      "Wie Ihre Kund:innen entscheiden – und wo sie abspringen",
+      "Wie Ihre Kund:innen entscheiden – und wo sie abspringen",
+      "Welche Inhalte & Seitenstruktur Ihr Funnel braucht",
+      "Was Sie sofort umsetzen können – und was später folgt",
+
+    ],
+     intro:   "<strong>Ergebnis:</strong> Ein klarer Funnel-Plan mit Zielgruppenprofilen, Messaging, Seitenstruktur und konkreten nächsten Schritten.",
+    button: { label: "Mehr erfahren", link: "/learn-more" },
+    images: ["/images/features/4.png"],
+  },
+  {
+    title:   "Für wen ist der FunnelX Workshop gemacht?",
+    content: "Der Workshop richtet sich an Teams, die strategisch wachsen wollen – aber merken, dass ihr Marketing nicht greift.<br><strong>Typische Situationen:</strong>",
+    features: [
+      "Ihre Website oder Kampagnen konvertieren nicht.",
+      "Zielgruppe und Messaging sind unklar.",
+      "Sie starten mit digitalem Marketing, aber ohne Plan.",
+      "Ein Relaunch oder Funnel-Aufbau steht bevor."
+    ],
+    intro:   "<strong>Nicht sinnvoll, wenn:</strong> Ein klarer Funnel-Plan mit Zielgruppenprofilen, Messaging, Seitenstruktur und konkreten nächsten Schritten.",
+    button: { label: "Jetzt starten", link: "/kontakt" },
+    images: ["/images/features/2.png", "/images/features/3.png"],
+  },
+  
+];
+
+
+import { markdownify } from "@/lib/utils/textConverter";
+import ImageMod        from "@/components/ImageMod.astro";
+
+// ─── hard‐coded Integrationen (“Leistungen”) ──────────
+const integrationHero = {
+  title:   "Ihr Ergebnis aus dem FunnelX Workshop",
+  content: "Am Ende des Workshops erhalten Sie ein strategisches Funnel-Dokument – kompakt, klar und individuell auf Ihr Unternehmen abgestimmt.",
+};
+const integrations = [
+  {
+    icon:    "/images/features/1.png",
+    app:     "Zielgruppenprofil(e)",
+    content: "Wer genau angesprochen werden soll – inklusive konkreter Bedürfnisse, Pain Points und Entscheidungslogik.",
+    button:  { enable: true, link: "https://slack.com",     label: "Mehr erfahren" },
+  },
+  {
+    icon:    "/images/features/1.png",
+    app:     "Messaging-Leitlinien",
+    content: "Welche Botschaft überzeugt – und wie Sie sie konsistent und differenzierend kommunizieren.",
+    button:  { enable: true, link: "https://slack.com",     label: "Mehr erfahren" },
+  },
+  {
+    icon:    "/images/features/1.png",
+    app:     "Customer Journey & Funnelstruktur",
+    content: "Ein nachvollziehbarer Ablauf von Aufmerksamkeit bis Abschluss – mit passenden Touchpoints und Inhalten.",
+    button:  { enable: true, link: "/kontakt",             label: "Kontakt aufnehmen" },
+  },
+    {
+    icon:    "/images/features/1.png",
+    app:     "Seitenstruktur & Content-Matrix",
+    content: "Welche Inhalte, Seiten und Formate Sie brauchen – und wo sie im Funnel platziert werden sollten.",
+    button:  { enable: true, link: "/kontakt",             label: "Kontakt aufnehmen" },
+  },
+      {
+    icon:    "/images/features/1.png",
+    app:     "Quick-Win-Plan",
+    content: "Sofort umsetzbare Maßnahmen mit hoher Hebelwirkung – kombiniert mit einer langfristigen Roadmap.",
+    button:  { enable: true, link: "/kontakt",             label: "Kontakt aufnehmen" },
+  },
+      {
+    icon:    "/images/features/1.png",
+    app:     "Strategische Entscheidungsgrundlage",
+    content: "Ein Dokument, das intern Klarheit schafft – zur Priorisierung von Budgets, Ressourcen und nächsten Schritten.",
+    button:  { enable: true, link: "/kontakt",             label: "Kontakt aufnehmen" },
+  },
+];
+---
+
+<Base>
+  <div class="hero-wrapper">
+    <Hero {hero} />
+  </div>
+
+  <Reasons reason={reason} />
+
+  <Feature feature={feature} />
+  <Video {video} />
+
+
+<!-- ─── Leistungen (Integrationen) ──────────────────── -->
+  <section class="section">
+    <div class="container md:w-3/4 lg:1/2 xl:w-full">
+      <h1
+        set:html={markdownify(integrationHero.title)}
+        class="text-center text-[32px] md:text-[48px] lg:text-[64px] mb-6"
+        data-aos="fade-up-sm"
+      />
+      <p
+        set:html={markdownify(integrationHero.content)}
+        class="text-center lg:w-1/2 mx-auto mb-14"
+        data-aos="fade-up-sm"
+      />
+
+      <div class="row g-4 justify-center">
+        {
+          integrations.map((i, index) => (
+            <div
+              class="col-12 lg:col-6 xl:col-4 min-h-full"
+              data-aos="zoom-in-sm"
+              data-aos-delay={50 + index * 100}
+            >
+              <div class="bg-light p-6 rounded-2xl flex flex-col justify-between h-full">
+                <div class="p-2 mb-3 rounded-full bg-body w-fit">
+                  <ImageMod
+                    src={i.icon}
+                    width={42}
+                    height={42}
+                    alt={i.app}
+                  />
+                </div>
+                <p
+                  set:html={markdownify(i.app)}
+                  class="font-medium text-xl mb-2.5"
+                />
+                <p
+                  set:html={markdownify(i.content)}
+                  class="mb-4 text-text/80"
+                />
+                {i.button.enable && (
+                  <a
+                    href={i.button.link}
+                    class="btn btn-ghost w-fit"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {i.button.label}
+                  </a>
+                )}
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+  <!-- ──────────────────────────────────────────────────── -->
+
+</Base>
+
+<style is:global>
+  .hero-wrapper a {
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    margin-top: 1.5rem;
+  }
+
+  .hero-wrapper .border-y {
+    display: none;
+  }
+</style>

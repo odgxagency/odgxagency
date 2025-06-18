@@ -87,6 +87,15 @@ const { feature } = Astro.props;
                 </li>
               ))}
             </ul>
+
+      {item.intro &&
+          <p
+            set:html={markdownify(item.intro)}
+            class="mb-6 text-lg"
+          />
+       }
+
+
             <Button
               link={slugSelector(item.button.link, lang)}
               label={item.button.label}
