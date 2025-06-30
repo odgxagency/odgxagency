@@ -69,8 +69,23 @@ const logs = [
 
 import Card from "@/components/Card.astro";
 import ImageMod from "@/components/ImageMod.astro";
-import dateFormat from "@/lib/utils/dateFormat";
 import { markdownify } from "@/lib/utils/textConverter";
+
+
+
+// ─── hard‐coded Kontakt hero & data ──────────
+const contactHero = {
+  title:   "Kontakt aufnehmen",
+  content: "Schreiben Sie uns oder rufen Sie an – wir freuen uns auf Ihre Anfrage!",
+};
+const contacts = [
+  { icon: "FaPhone",    name: `<strong>Telefon:</strong> <a href="tel:+4909001234567">+49 0900 1234567</a>` },
+  { icon: "FaEnvelope",     name: `<strong>E-Mail:</strong> <a href="mailto:hi@funnelx.de">hi@…</a>` },
+  { icon: "FaMapPin",  name: `<strong>Adresse:</strong> Musterstraße 1, Berlin` },
+];
+
+import ContactForm from "@/components/ContactForm.astro";
+import DynamicIcon from "@/helpers/DynamicIcon";
 
 ---
 
@@ -149,4 +164,60 @@ import { markdownify } from "@/lib/utils/textConverter";
 
 
        <Faq />
+
+
+
+       <!-- ─── Kontakt Section ──────────────────── -->
+  <section class="section">
+    <div class="container">
+      <div class="row g-4 justify-center">
+        <!-- 1) your contact‐section hero copy -->
+        <div class="col-12 text-center">
+          <h1
+            set:html={markdownify(contactHero.title)}
+            class="text-center mb-6 text-[32px] md:text-[48px] lg:text-[64px]"
+            data-aos="fade-up-sm"
+          />
+          <p
+            set:html={markdownify(contactHero.content)}
+            class="lg:text-balance lg:w-1/2 mx-auto mb-14"
+            data-aos="fade-up-sm"
+          />
+        </div>
+
+        <!-- 2) the little cards with phone / mail / address -->
+        <div class="col-12 md:col-10 lg:col-8 xl:col-5">
+          <div class="p-10 rounded-xl bg-light h-full flex flex-col justify-between">
+            <h3 class="mb-auto max-xl:mb-6" data-aos="fade-up-sm">
+              Start a Conversation
+            </h3>
+            <div>
+              {contacts.map((c, i) => (
+                <div
+                  class="flex items-center mb-4 last:mb-0"
+                  data-aos="fade-up-sm"
+                  data-aos-delay={i * 100}
+                >
+                  <div class="mr-4 p-5 rounded-full bg-primary w-fit">
+                       <DynamicIcon icon={c.icon} className="text-text-light text-3xl" />
+                  </div>
+                  <p set:html={markdownify(c.name)} class="text-xl" />
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <!-- 3) the form itself (ContactForm already wraps itself in the same p-10 bg-light container) -->
+        <div class="col-12 md:col-10 lg:col-8 xl:col-7">
+          <ContactForm lang={lang} />
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ────────────────────────────────────────── -->
+
+
+
+
 </Base>
