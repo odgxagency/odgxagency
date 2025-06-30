@@ -1,24 +1,27 @@
 ---
-title_1: "FAQ-Section"
-title_2: "Klar beantwortet – für fundierte Entscheidungen."
+title_1: "FAQ"
+title_2: "Die wichtigsten Fragen vor der Entscheidung"
 faqs:
-  - question: "Was unterscheidet euren Strategie-Workshop für B2B Unternehmen von klassischem Marketing-Consulting?"
-    answer: "Unser Workshop ist nicht nur Analyse – sondern Umsetzung. Wir schaffen einen klaren Plan mit Prioritäten, messbaren Zielen und einem roten Faden. Keine PowerPoint-Folien, sondern echte Go-to-Market-Strategie."
+  - question: "Was ist in Conversion-Website und Content konkret enthalten?"
+    answer: "Eine neue Seitenstruktur auf Funnel-Basis, SEO-Content (Pillar + Cluster), Messaging-Leitlinien und ein Go-Live mit Fokus. Danach: Content-Sprints für Ausbau, Leadgenerierung & Retargeting."
 
-  - question: "Für welche Unternehmen ist der Workshop geeignet?"
-    answer: "Ideal für B2BUnternehmen, die in Marketing investieren, aber keine klare Strategie haben – besonders SaaS, Tech & komplexe Dienstleistungen."
+  - question: "Wie lange dauert die Umsetzung?"
+    answer: "Der initiale Go-Live ist in 3–5 Wochen möglich – schlank, aber wirkungsvoll. Die Erweiterung passiert danach schrittweise und datenbasiert."
 
-  - question: "Was ist nach dem Workshop anders?"
-    answer: "Du hast Klarheit über:
-        - Deine idealen Zielkunden & ihre Pain Points
-        - Deine strategischen Wachstumshebel
-        - Deine konkreten nächsten Schritte in Marketing & Sales"
+  - question: "Brauche ich schon Inhalte oder eine Strategie?"
+    answer: Nein, wir arbeiten auf Basis des FunnelX-Workshops (Phase 0) oder entwickeln eine fundierte Struktur & SEO-Strategie mit euch gemeinsam."
 
-  - question: "Wie lange dauert der Prozess?"
-    answer: "Der Workshop selbst dauert 1 Tag (remote oder vor Ort). Danach erhältst du in wenigen Tagen dein Strategie-Dokument inklusive Handlungsempfehlungen und Priorisierung, welches wir zusammen besprechen. Für die Vorbereitung auf den Workshop solltest du dir 2 Tage nehmen"
+  - question: "Für wen ist die Conversion-Website und Content Erstellung besonders geeignet?"
+    answer: "Für B2B-Unternehmen, die strategisch wachsen wollen, mit klarer Zielgruppe, komplexen Leistungen und Bedarf an Sichtbarkeit & qualifizierten Leads."
 
-  - question: "Wie viel kostet der Workshop?"
-    answer: "Der Preis liegt bei 4.900 € zzgl. MwSt. – inklusive Vorbereitung, Durchführung und Nachbereitung. Für B2BUnternehmen oft der wichtigste Hebel, bevor weiteres Marketingbudget verpufft"
+  - question: "Wie unterscheidet sich das von einem typischen Website-Relaunch?"
+    answer: "Wir starten nicht mit Design, sondern mit Strategie. Keine monatelangen Agentur-Loops, sondern direkte Umsetzung und gezielter Ausbau entlang messbarer Ziele."
+
+  - question: "Was kostet die Funnel-Methode?"
+    answer: "Das hängt vom Umfang ab. Projekte starten meist ab [Preisspanne einsetzen], je nach Ausgangslage, Zielgruppenanzahl und Content-Tiefe."
+
+  - question: "Und wenn ich schon eine Website habe?"
+    answer: "Dann prüfen wir, was davon sinnvoll übernommen werden kann und wo struktureller oder inhaltlicher Hebel liegt."
 
 contact:
   title: "Noch Fragen? Buche ein kostenloses Vorgespräch."

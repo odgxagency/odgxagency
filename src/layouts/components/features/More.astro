@@ -30,12 +30,13 @@ const { more } = Astro.props;
                 data-aos-delay={50 + i * 100}
               >
                 <div class="flex flex-col items-center">
-                  <DynamicIcon
-                    icon={p.icon}
-                    className="mb-6 text-primary text-5xl"
-                    data-aos="zoom-in-sm"
-                    data-aos-delay={50 + i * 50}
-                  />
+                <span
+                class="mb-6 text-primary text-5xl font-bold"
+                data-aos="zoom-in-sm"
+                data-aos-delay={50 + i * 50}
+                >
+                {i + 1}
+                </span>
                   <p
                     set:html={markdownify(p.details)}
                     class="text-center text-xl font-medium"
@@ -48,6 +49,19 @@ const { more } = Astro.props;
           }
         </div>
       </div>
+
+
+
+      <div class="mt-12 flex flex-col sm:flex-row justify-center gap-4" data-aos="fade-up-sm">
+        <a href="/kontakt" class="btn btn-primary">
+          Strategie Call buchen
+        </a>
+        <a href="/learn-more" class="btn btn-outline">
+          Unsere Methode
+        </a>
+      </div>
+
+
     </div>
   </div>
 </section>

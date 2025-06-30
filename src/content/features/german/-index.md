@@ -3,8 +3,8 @@ title: "Strategie-Workshop"
 meta_title: "Dies ist die Seite für Funktionen"
 description: "Dies ist eine Beschreibung"
 hero:
-  title: "Funnel X - Workshop"
-  content: "Ihr Startpunkt für strukturierte Kundengewinnung. <br><br>Gemeinsam erarbeiten wir die strategische Grundlage für Marketing, das funktioniert – mit klarer Zielgruppe und darauf basierenden Alleinstellungsmerkmalen, durchdachtem Funnel & einem strukturierten Plan zur Umsetzung."
+  title: "Ihre Website als Wachstumsmotor"
+  content: "Wir kombinieren Content-Strategie, SEO-Setup und Conversion-Fokus zu einer Website, die nicht nur schön aussieht, sondern verkauft."
   client_logos:
     - "/images/homepage/clients/1.svg"
     - "/images/homepage/clients/2.svg"
@@ -12,15 +12,15 @@ hero:
     - "/images/homepage/clients/4.svg"
     - "/images/homepage/clients/5.svg"
   features:
-    - button: "Zielgruppenanalyse"
-      title: "Verstehen, wer dein Kunde ist und was dessen Problem ist."
-      content: "Text hier noch einfügen."
+    - button: "Stratgie Call buchen"
+      title: "Starten Sie mit dem, was zählt: Inhalte, die überzeugen – und Seiten, die performen."
+      content: "Wir entwickeln Ihre Website entlang der Funnel-Logik: suchmaschinenoptimiert, konversionsorientiert und auf Wachstum ausgerichtet."
       image: "/images/features/1.png"
       link:
         enable: true
-        label: "Mehr erfahren"
+        label: "Strategie Call buchen"
         link: "#"
-    - button: "Alleinstellungsmerkmal"
+    - button: "Unsere Methode"
       title: "Was macht dich und deine Lösung für das Problem einzigartig?"
       content: "Text hier noch einfügen."
       image: "/images/features/2.png"
@@ -28,14 +28,7 @@ hero:
         enable: true
         label: "Mehr erfahren"
         link: "#"
-    - button: "Customer Journey"
-      title: "Verfolge jeden Bericht einzeln für bessere Datenanalysen"
-      content: "Text hier noch einfügen."
-      image: "/images/features/3.png"
-      link:
-        enable: true
-        label: "Mehr erfahren"
-        link: "#"
+
 
 benefit:
   title: "Branchen"
@@ -55,8 +48,8 @@ benefit:
         - "Wachstum durch umsetzbare Einblicke fördern."
 
 trust:
-  title: "Vertraut von starken Marken"
-  content: "Strategie ist Vertrauenssache, besonders im B2B. Darum lassen wir andere sprechen: Kunden, die vorher unsicher waren. Und jetzt mit Plan wachsen."
+  title: "Vertrauen von B2B-Marken, die auf Wirkung statt nur Webdesign setzen"
+  content: "Unsere Kunden starten nicht mit Design, sondern mit Strategie, Struktur und Inhalten, die ihre Zielgruppe überzeugen. Diese Methode ersetzt Bauchgefühl durch Klarheit und generische Templates durch individuelle Seiten, die gefunden werden und verkaufen."
   stats:
     - company: "/images/testimonial/11.svg"
       comment: "Zuverlässig und vertrauenswürdig. Sie haben mein Vertrauen und meine Loyalität gewonnen. Dieses Unternehmen zeigt konstant Verlässlichkeit und Ehrlichkeit."
@@ -84,19 +77,19 @@ trust:
           subtitle: "Aktive Nutzer"
   button:
     enable: true
-    label: "Jetzt kostenlos starten"
+    label: "Strategie Call buchen"
     link: "/pricing"
 
 more:
-  title: "Branchen"
-  content: "Hier ist ein auffälliger Slogan, der die Überschrift unterstützt und zusätzliche Informationen liefert."
+  title: "So entsteht Ihre Website als Content-Plattform"
+  content: "Unser 80/20-Prozess: schlank starten, strategisch ausbauen – mit Funnel-Logik, SEO-Content und messbarer Wirkung."
   points:
     - icon: "FaCube"
-      details: "Finanzdienstleister<br><br><h5>Problem:</h5> <p style='font-weight:light;text-align: center'>Komplexe Leistungen, lange Entscheidungswege, wenig Differenzierung.</p><h5>Lösung:</h5> <p style='font-weight:light;text-align: center'> Wir schärfen USP & Positionierung, mappen den Funnel auf reale Entscheidungslogiken und liefern einen Plan, der Vertrauen aufbaut.</p>"
+      details: "Struktur & Zielgruppenfokus<br><br><p style='font-weight:light;text-align: left'>Wir entwickeln eine neue Website-Struktur, nicht aus dem Bauch, sondern entlang Ihrer Funnel-Strategie, Customer Journey und der wichtigsten Zielgruppe.</p><br>–> Klarer Seitenaufbau, der gefunden wird und überzeugt."
     - icon: "FaDatabase"
-      details: "MedTech & Healthcare B2B<br><br><h5>Problem:</h5> <p style='font-weight:light;text-align: center'>Hoher Regulierungsdruck, erklärungsbedürftige Produkte, Kaufentscheidungen durch Komitees.</p><h5>Lösung:</h5> <p style='font-weight:light;text-align: center'> Wir bauen Vertrauen durch Content, strukturieren den Sales Funnel nach klinischen/stakeholder-spezifischen Journeys und liefern Templates für wiederkehrende Verkaufszyklen.</p>"
+      details: "Go-Live mit dem, was zählt<br><br><p style='font-weight:light;text-align: left'>Statt ewigem Relaunch starten wir mit einer schlanken, fokussierten Plattform – z. B. einer starken Pillar Page und passender Landingpage für Ihre Kernleistung oder Nische.</p> <br><br>–> Erste Leads ab Woche 2 und ein Fundament, das skaliert."
     - icon: "FaDisplay"
-      details: "SaaS & Tech-Anbieter (B2B)<br><br><h5>Problem:</h5> <p style='font-weight:light;text-align: center'>Viele Funktionen, aber wenig Klarheit im Nutzenversprechen. Marketing ist oft zu technisch.</p><br><h5>Lösung:</h5> <p style='font-weight:light;text-align: center'> Wir übersetzen Features in Business Value, entwickeln eine Funnelstruktur mit klarer Conversion-Logik und helfen, komplexe Produkte einfach zu verkaufen..</p>"
+      details: "Content-Sprints & Skalierung<br><br><p style='font-weight:light;text-align: left'>Mit jedem Sprint erweitern wir Ihre Plattform: neue Zielgruppen, Cluster-Content (FAQs, Blogartikel, Vergleiche), Conversion-Optimierung, Thought Leadership.</p><br>–> Sichtbarkeit, Social Proof & Retargeting-Potenzial aus einem Guss."
 
 feature:
   - title: "Klare Zielgruppendefinition"
@@ -111,16 +104,19 @@ feature:
       - "/images/features/1.png"
 
 reason:
-  title: "Branchen - Mit wem arbeiten wir?"
+  title: "Erkennen Sie sich wieder?"
   points:
-    - title: "Finanzdienstleister"
-      content: "<strong>Problem: </strong>Komplexe Leistungen, lange Entscheidungswege, wenig Differenzierung. <strong>Lösung</strong>: Wir schärfen USP & Positionierung, mappen den Funnel auf reale Entscheidungslogiken und liefern einen Plan, der Vertrauen aufbaut."
+    - title: "Unsere Website wird nicht gefunden"
+      content: "Wir sind online, aber niemand findet uns über Google."
       image: "/images/homepage/reasons/1.png"
-    - title: "MedTech & Healthcare B2B"
-      content: "<strong>Problem: </strong>Hoher Regulierungsdruck, erklärungsbedürftige Produkte, Kaufentscheidungen durch Komitees. <strong>Lösung</strong>: Wir bauen Vertrauen durch Content, strukturieren den Sales Funnel nach klinischen/stakeholder-spezifischen Journeys und liefern Templates für wiederkehrende Verkaufszyklen."
+    - title: "Nutzer:innen springen ab"
+      content: "Besucher kommen, aber keiner bleibt oder konvertiert."
       image: "/images/homepage/reasons/2.png"
-    - title: "SaaS & Tech-Anbieter (B2B)"
-      content: "<strong>Problem: </strong>Viele Funktionen, aber wenig Klarheit im Nutzenversprechen. Marketing ist oft zu technisch. <strong>Lösung</strong>: Wir übersetzen Features in Business Value, entwickeln eine Funnelstruktur mit klarer Conversion-Logik und helfen, komplexe Produkte einfach zu verkaufen."
+    - title: "Wir kriegen keine qualifizierten Leads"
+      content: "Anfragen sind selten oder unpassend."
+      image: "/images/homepage/reasons/3.png"
+    - title: "Der Relaunch zieht sich ewig"
+      content: "Wir hängen seit Monaten im Redesign fest."
       image: "/images/homepage/reasons/3.png"
 
 

@@ -1,0 +1,152 @@
+---
+import Hero from "@/components/features/Hero.astro";
+import More from "@/components/features/More.astro";
+import Trust from "@/components/features/Trust.astro";
+import Reasons from "@/components/home/Reasons.astro";
+import Faq from "@/components/Faq.astro";
+
+
+import Base from "@/layouts/Base.astro";
+import { getListPage } from "@/lib/contentParser.astro";
+import { supportedLang } from "@/lib/utils/languageParser";
+import type { ContentEntryMap } from "astro:content";
+
+export function getStaticPaths() {
+  const paths = supportedLang.map((lang) => ({
+    params: { lang: lang || undefined },
+  }));
+  return paths;
+}
+
+
+
+const { lang } = Astro.params;
+const featureIndex = await getListPage(
+  "features",
+  lang as keyof ContentEntryMap
+);
+const { title, meta_title, description, hero, benefit, trust, more, reason } =
+  featureIndex[0].data;
+
+
+const changelogTitle = "Strategie, die branchenspezifisch wirkt";
+const content = "Ob FinTech, Beratung oder technischer Mittelstand, wir entwickeln Content-Plattformen, die gezielt auf Ihre Zielgruppe einzahlen. Kein generisches Webdesign. Sondern Funnel-Strategie, die performt.";
+
+const logs = [
+  {
+    image: "/images/homepage/feature/4.png",
+    version: "Finanzdienstleister",
+    note: "Vertrauen schaffen durch klare Sprache, Struktur und FAQ-Content.<br><br>→ Pillar Pages, Leistungsseiten, Cases & Lead-Nurturing-Strecken",
+  },
+  {
+    image: "/images/homepage/feature/4.png",
+    version: "B2B-Leads",
+    note: "Use Cases, Integrationen & SEO-Cluster für die Buyer Journey.<br><br> → Funnel-Logik mit Landingpages, Produkt-Content, LinkedIn-Posts ",
+  },
+  {
+    image: "/images/homepage/feature/4.png",
+    version: "Technischer Mittelstand / KMU",
+    note: "Klare Navigation, reduzierte Sprache, SEO statt Broschüre. <br><br>→ Lokale Sichtbarkeit, Google-optimiert, mobil schnell verständlich",
+  },
+
+    {
+    image: "/images/homepage/feature/4.png",
+    version: "Beratung & Agenturen",
+    note: "Positionierung als Thought Leader & Fachexperte.<br><br>→ Blog, Case Stories, Leistungsstruktur mit Proof-Punkten",
+  },
+    {
+    image: "/images/homepage/feature/4.png",
+    version: "HR & Recruiting-Dienstleister",
+    note: "Vertrauensbasierte Conversion – statt nur ‘Jetzt bewerben’.<br><br>→ Zielgruppenspezifische Content-Flows, Trust-Elemente & Video",
+  },
+    {
+    image: "/images/homepage/feature/4.png",
+    version: " FinTech Startups",
+    note: "Komplexe Produkte in einfache Sprache bringen. <br><br> → Slideposts, Funnel-Seiten, FAQ-Content & Thought Leadership",
+  },
+  // ...add more as needed
+];
+
+import Card from "@/components/Card.astro";
+import ImageMod from "@/components/ImageMod.astro";
+import dateFormat from "@/lib/utils/dateFormat";
+import { markdownify } from "@/lib/utils/textConverter";
+
+---
+
+
+
+<Base title={title} meta_title={meta_title} description={description}>
+
+  <Hero {hero} />
+  <Trust {trust} />
+  {reason && <Reasons {reason} />}
+  <More {more} />
+
+
+
+
+
+
+
+    <div class="container lg:1/2 xl:w-full">
+      <div class="row justify-center g-4">
+        <div class="col-12">
+            <h1
+          set:html={markdownify(changelogTitle)}
+            class="text-center text-[32px] md:text-[48px] lg:text-[64px] mb-6"
+            data-aos="fade-up-sm"
+          />
+          <p
+            set:html={markdownify(content)}
+            class="text-center lg:w-1/2 mx-auto mb-14"
+            data-aos="fade-up-sm"
+          />
+        </div>
+
+        {
+          logs.map((log: any, index: number) => (
+            <div
+              class="col-12 md:col-6 lg:col-4 min-h-full"
+              data-aos="fade-up-sm"
+              data-aos-delay={50 + index * 100}
+            >
+              <div class="border border-border rounded-2xl flex flex-col justify-between h-full">
+                <div>
+                  <Card className="h-[386px] !rounded-2xl bg-light">
+                    <div
+                      class="flex justify-center items-center w-auto p-10 md:p-20 !min-h-full md:h-full"
+                      data-aos="zoom-in-sm"
+                    >
+                      <ImageMod
+                        src={log.image}
+                        alt={log.version}
+                        width={0}
+                        height={0}
+                        class="object-contain image-card relative z-10"
+                      />
+                    </div>
+                  </Card>
+
+                  <div class="p-6">
+                    <h4 set:html={markdownify(log.version)} class="mb-3" />
+                    <p
+                      set:html={markdownify(log.note)}
+                      class="text-text-gray"
+                    />
+                  </div>
+                </div>
+              
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+    <br><br>
+
+
+
+
+       <Faq />
+</Base>

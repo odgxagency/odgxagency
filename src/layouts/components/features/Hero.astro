@@ -22,7 +22,7 @@ const lang = getLangFromUrl(Astro.url);
         <div class="col-12 lg:col-10">
           <p
             set:html={markdownify(hero.title)}
-            class="text-center page-title mb-6"
+            class="text-center page-title font-bold max-w-2xl mx-auto mb-6"
             data-aos="fade-up-sm"
           />
           <div class="w-2/3 mx-auto text-center">
@@ -40,3 +40,6 @@ const lang = getLangFromUrl(Astro.url);
   </section>
   {titleBg && <TitleBg />}
 </div>
+
+
+<br><br>
