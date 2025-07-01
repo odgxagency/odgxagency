@@ -11,6 +11,7 @@ import Base        from "@/layouts/Base.astro";
 import Testimonial from "@/partials/Testimonial.astro";
 import { markdownify } from "@/lib/utils/textConverter";
 import { supportedLang } from "@/lib/utils/languageParser";
+import Experience    from "@/components/about/Experience.astro";
 
 // 1) Tell Astro which locales to build:
 export function getStaticPaths() {
@@ -65,7 +66,8 @@ const hero = {
 
 // 5) Reasons
 const reason = {
-  title: "Warum Phase 2 entscheidend ist",
+  title: "Wissen Sie, wo Nutzer abspringen und warum?",
+  intro: "Viele Teams sehen Traffic und Absprungraten – aber keine echten Ursachen. Unser Tracking zeigt, welche Inhalte wirken, wo Nutzer hängenbleiben und wie sie sich durch den Funnel bewegen.",
   points: [
     {
       title:   "Keine Funnel-Ziele",
@@ -102,12 +104,12 @@ const more = {
 };
 
 // 7) Mini‐case studies grid
-const changelogTitle = "Strategie in Aktion";
-const contentText    = "Beispiele aus verschiedenen Branchen – so wirkt die FunnelX Methode in Phase 2.";
+const changelogTitle = "Tracking, das branchenspezifisch Sinn ergibt";
+const contentText    = "Ob FinTech, Beratung oder technischer Mittelstand, wir setzen Tracking so auf, dass es Ihre tatsächlichen Funnel-Ziele abbildet. Keine Standard-Ereignisse, sondern smarte Metriken, die Ihnen helfen zu optimieren.";
 const logs = [
-  { image: "/images/homepage/feature/4.png", version: "B2B Tech",    note: "Landingpages mit Performance-Fokus und Segmentierung durch Ads." },
-  { image: "/images/homepage/feature/5.png", version: "Consulting",  note: "Strukturierte Thought Leadership für LinkedIn & Blog." },
-  { image: "/images/homepage/feature/6.png", version: "HealthTech",  note: "Funnel-Optimierung durch klare Customer Journey Mapping." },
+  { image: "/images/homepage/feature/4.png", version: "Finanzdienstleister", note: "„Was passiert auf unseren Seiten, bevor jemand zum Lead wird?“ → Scrolltiefe, Formularstarts, Soft-Conversions & Retargeting-Daten für sensible Themen" },
+  { image: "/images/homepage/feature/3.png", version: "B2B-Leads",  note: "„Welcher Content zieht wirklich und wie reif sind die Besucher:innen?“ → Funnelziele nach TOFU/MOFU/BOFU, Custom Events je Plattform & verknüpfte Retargeting-Segmente" },
+  { image: "/images/homepage/feature/4.png", version: "Technischer Mittelstand / KMU",  note: "„Wir brauchen Übersicht statt Datenchaos.“ → strukturierter Measurement Plan, DSGVO-sicher mit Server Side Tracking, visualisierte Nutzerpfade" },
 ];
 
 // 8) Contact call-out
@@ -176,6 +178,45 @@ const testimonial = [
 
 
 
+// ─── hard‐coded experience section ────────────────────
+const experience = {
+  title: "Was andere über den FunnelX Workshop sagen",
+  cards: [
+    {
+      image:   "/images/features/1.png",
+      title:   "Pilot-Workshops",
+      content: "Erste 10 Testsessions zusammen mit Pionier-Unternehmen im Jahr 2020.",
+    },
+    {
+      image:   "/images/features/1.png",
+      // this becomes the large middle image
+      title:   "Über 200 Workshops",
+      content: "Online & vor Ort seit 2020—mit durchweg positiver Resonanz.",
+    },
+    {
+      image:   "/images/features/1.png",
+      value:   "TOFU (Top of Funnel)",
+      suffix:  "",
+      title:   "TOFU (Top of Funnel)",
+      content: "Nutzerproblem erkannt – Lösung noch unklar - Ziele: Aufmerksamkeit & Engagement - Beispiele: • Scrolltiefe > 75 % • Whitepaper Download• FAQ geöffnet• Verweildauer > 90 Sek",
+    },
+    {
+      image:   "/images/features/1.png",
+      value:   50,
+      suffix:  "+",
+      title:   "Unternehmen",
+      content: "„Dank des Workshops wussten wir endlich, wo unsere Website blockiert – und wie wir gezielter Leads gewinnen. Die Klarheit über unsere Zielgruppe hat vieles verändert.“– Marketing-Leiterin, B2B-Unternehmen",
+    },
+    {
+      image:   "/images/features/1.png",
+      value:   95,
+      suffix:  "%",
+      title:   "Zufriedenheit",
+      content: "Durchschnittliche Teilnehmer-Zufriedenheit.",
+    },
+  ],
+};
+
 ---
 
 <Base title={title} meta_title={meta_title} description={description}>
@@ -184,7 +225,7 @@ const testimonial = [
   <Testimonial {testimonial} />
 
   <Reasons {reason} />
-  <More {more} />
+
 
   <section class="container lg:1/2 xl:w-full py-16">
     <div class="row justify-center g-4">
@@ -221,6 +262,9 @@ const testimonial = [
       ))}
     </div>
   </section>
+
+     <!-- Experience section re-used  -->
+  <Experience {experience} />
 
   <Faq />
 
