@@ -1,0 +1,265 @@
+---
+import Hero        from "@/components/features/Hero.astro";
+import Reasons     from "@/components/home/Reasons.astro";
+import More        from "@/components/features/More.astro";
+import Faq         from "@/components/Faq.astro";
+import Card        from "@/components/Card.astro";
+import ImageMod    from "@/components/ImageMod.astro";
+import ContactForm from "@/components/ContactForm.astro";
+import DynamicIcon from "@/helpers/DynamicIcon";
+import Base        from "@/layouts/Base.astro";
+import Testimonial from "@/partials/Testimonial.astro";
+import { markdownify } from "@/lib/utils/textConverter";
+import { supportedLang } from "@/lib/utils/languageParser";
+
+// 1) Tell Astro which locales to build:
+export function getStaticPaths() {
+  return supportedLang.map((lng) => ({
+    params: { lang: lng || undefined },
+  }));
+}
+
+const { lang } = Astro.params;
+
+// 2) Page metadata
+const title       = "Phase 2 – Strategische Wirkung entfalten";
+const meta_title  = "Phase 2 – FunnelX Methode";
+const description = "So funktioniert Phase 2 im FunnelX Workshop.";
+
+// 3) Hero
+const hero = {
+  title:   "Tracking mit System",
+  content: "Wir messen Verhalten je Funnelstufe, von Scrolltiefe bis Buchung. So entsteht ein Tracking-System, das mehr zeigt als nur Conversions.",
+  images: [
+    "/images/features/1.png",
+    "/images/features/1.png"
+  ],
+  client_logos: [
+    "/images/features/1.png",
+    "/images/features/1.png",
+    "/images/features/1.png"
+  ],
+  buttons: [
+    { label: "Kostenloses Erstgespräch", link: "/kontakt" },
+    { label: "Mehr erfahren",          link: "/learn-more" }
+  ],
+  features: [
+    {
+      button: "Strategie Call buchen",
+      title:  "Messen Sie, was zählt: Funnel-Ziele, Nutzerverhalten und Content-Wirkung.",
+      content:"Wir machen Ihr Marketing steuerbar, mit einem Tracking-System, das Verhalten entlang der gesamten Customer Journey abbildet. So erkennen Sie, was wirklich funktioniert und wo Optimierungspotenziale liegen.",
+      image:   "/images/features/1.png",
+      link:    { enable: true, label: "Mehr Details", link: "/details" }
+    },
+    {
+      button: "Unsere Methode",
+      title:  "Praxis-Beispiele",
+      content:"Schauen Sie, wie andere in Phase 2 Erfolge feiern.",
+      image:    "/images/features/1.png",
+      link:    { enable: true, label: "Fallstudien",   link: "/cases" }
+    }
+  ]
+};
+
+
+
+// 5) Reasons
+const reason = {
+  title: "Warum Phase 2 entscheidend ist",
+  points: [
+    {
+      title:   "Keine Funnel-Ziele",
+      content: "„Wir sehen Seitenaufrufe, aber wissen nicht, ob die Seite funktioniert.“",
+      image:   "/images/features/1.png",
+    },
+    {
+      title:   "Alles wird gleich bewertet",
+      content: "„Whitepaper-Download und Buchung? Beides einfach nur ‘Conversion’.“",
+      image:   "/images/features/2.png",
+    },
+    {
+      title:   "Daten, die nicht steuerbar sind",
+      content: "„GA4 liefert Zahlen – aber keine Insights für Kampagnen oder Content.“",
+      image:   "/images/features/3.png",
+    },
+        {
+      title:   "DSGVO bremst unser Tracking",
+      content: "„Wir dürfen nichts messen oder glauben das zumindest.“",
+      image:   "/images/features/4.png",
+    },
+  ],
+};
+
+// 6) More
+const more = {
+  title:   "Was in Phase 2 passiert",
+  content: "Wir wählen gemeinsam die ersten Schritte aus und begleiten Sie bei der Umsetzung Ihrer Funnel-Strategie.",
+  points: [
+    { icon: "FaBullseye",       details: "Quick Win auswählen & direkt umsetzen" },
+    { icon: "FaProjectDiagram", details: "Seitenstruktur & Content anpassen"     },
+    { icon: "FaRocket",         details: "Kampagnen starten & Wirkung messen"     },
+  ],
+};
+
+// 7) Mini‐case studies grid
+const changelogTitle = "Strategie in Aktion";
+const contentText    = "Beispiele aus verschiedenen Branchen – so wirkt die FunnelX Methode in Phase 2.";
+const logs = [
+  { image: "/images/homepage/feature/4.png", version: "B2B Tech",    note: "Landingpages mit Performance-Fokus und Segmentierung durch Ads." },
+  { image: "/images/homepage/feature/5.png", version: "Consulting",  note: "Strukturierte Thought Leadership für LinkedIn & Blog." },
+  { image: "/images/homepage/feature/6.png", version: "HealthTech",  note: "Funnel-Optimierung durch klare Customer Journey Mapping." },
+];
+
+// 8) Contact call-out
+const contactHero = {
+  title:   "Bereit für Phase 2?",
+  content: "Lassen Sie uns gemeinsam den nächsten Schritt gehen – unverbindlich und zielgerichtet.",
+};
+const contacts = [
+  { icon: "FaPhone",    name: `<strong>Telefon:</strong> <a href="tel:+4909001234567">+49 0900 1234567</a>` },
+  { icon: "FaEnvelope", name: `<strong>E-Mail:</strong> <a href="mailto:hi@funnelx.de">hi@…</a>`            },
+  { icon: "FaMapPin",   name: `<strong>Adresse:</strong> Musterstraße 1, Berlin`                          },
+];
+
+const testimonial = [
+  {
+    data: {
+      enable: true,
+      title: "Vertrauen durch messbare Ergebnisse",
+      reviews: [
+        {
+          company: "/images/testimonial/8.svg",
+          review: "Durch Phase 2 haben wir in nur zwei Wochen erste messbare Erfolge gesehen!",
+          author: "/images/avatar/1.png",
+          name: "Julia Meier",
+          designation: "Head of Marketing, B2B Tech GmbH",
+        },
+        {
+          company: "/images/testimonial/9.svg",
+          review: "Die Quick-Wins waren sofort umsetzbar und haben uns richtig vorangebracht.",
+          author: "/images/avatar/2.png",
+          name: "Thomas Klein",
+          designation: "CEO, Consulting AG",
+        },
+        {
+           company: "/images/testimonial/10.svg",
+          review: "Klar strukturierte Umsetzung – genau das, was uns gefehlt hat.",
+          author: "/images/avatar/3.png",
+          name: "Sandra Vogel",
+          designation: "CMO, HealthTech Solutions",
+        },
+                {
+           company: "/images/testimonial/10.svg",
+          review: "Klar strukturierte Umsetzung – genau das, was uns gefehlt hat.",
+          author: "/images/avatar/3.png",
+          name: "Sandra Vogel",
+          designation: "CMO, HealthTech Solutions",
+        },
+                {
+           company: "/images/testimonial/10.svg",
+          review: "Klar strukturierte Umsetzung – genau das, was uns gefehlt hat.",
+          author: "/images/avatar/3.png",
+          name: "Sandra Vogel",
+          designation: "CMO, HealthTech Solutions",
+        },
+                {
+           company: "/images/testimonial/10.svg",
+          review: "Klar strukturierte Umsetzung – genau das, was uns gefehlt hat.",
+          author: "/images/avatar/3.png",
+          name: "Sandra Vogel",
+          designation: "CMO, HealthTech Solutions",
+        },
+      ],
+    },
+  },
+];
+
+
+
+---
+
+<Base title={title} meta_title={meta_title} description={description}>
+  <Hero {hero} />
+
+  <Testimonial {testimonial} />
+
+  <Reasons {reason} />
+  <More {more} />
+
+  <section class="container lg:1/2 xl:w-full py-16">
+    <div class="row justify-center g-4">
+      <div class="col-12 text-center">
+        <h1 
+          set:html={markdownify(changelogTitle)}
+          class="text-[32px] md:text-[48px] lg:text-[64px] mb-6"
+          data-aos="fade-up-sm"
+        />
+        <p 
+          set:html={markdownify(contentText)}
+          class="lg:w-1/2 mx-auto mb-14"
+          data-aos="fade-up-sm"
+        />
+      </div>
+      {logs.map((log, i) => (
+        <div 
+          class="col-12 md:col-6 lg:col-4 min-h-full"
+          data-aos="fade-up-sm"
+          data-aos-delay={50 + i * 100}
+        >
+          <div class="border border-border rounded-2xl flex flex-col h-full">
+            <Card className="!rounded-2xl bg-light flex-1">
+              <div class="flex justify-center items-center p-10 md:p-20">
+                <ImageMod src={log.image} alt={log.version} width={0} height={0} class="object-contain" />
+              </div>
+            </Card>
+            <div class="p-6">
+              <h4 set:html={markdownify(log.version)} class="mb-3" />
+              <p  set:html={markdownify(log.note)}    class="text-text-gray" />
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <Faq />
+
+  <section class="section">
+    <div class="container">
+      <div class="row g-4 justify-center">
+        <div class="col-12 text-center">
+          <h1 
+            set:html={markdownify(contactHero.title)}
+            class="text-[32px] md:text-[48px] lg:text-[64px] mb-6" 
+            data-aos="fade-up-sm"
+          />
+          <p  
+            set:html={markdownify(contactHero.content)}
+            class="lg:w-1/2 mx-auto mb-14"
+            data-aos="fade-up-sm"
+          />
+        </div>
+        <div class="col-12 md:col-10 lg:col-8 xl:col-5">
+          <div class="p-10 bg-light rounded-xl flex flex-col justify-between h-full">
+            <h3 class="mb-6" data-aos="fade-up-sm">Start a Conversation</h3>
+            {contacts.map((c, i) => (
+              <div 
+                class="flex items-center mb-4 last:mb-0"
+                data-aos="fade-up-sm"
+                data-aos-delay={i * 100}
+              >
+                <div class="mr-4 p-5 rounded-full bg-primary w-fit">
+                  <DynamicIcon icon={c.icon} className="text-text-light text-3xl" />
+                </div>
+                <p set:html={markdownify(c.name)} class="text-xl" />
+              </div>
+            ))}
+          </div>
+        </div>
+        <div class="col-12 md:col-10 lg:col-8 xl:col-7">
+          <ContactForm lang={lang} />
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>
