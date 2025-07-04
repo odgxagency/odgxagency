@@ -3,6 +3,7 @@ import Hero        from "@/components/features/Hero.astro";
 import Reasons     from "@/components/home/Reasons.astro";
 import Trust       from "@/components/features/Trust.astro";
 import More    from "@/components/features/More.astro";
+import Testimonial from "@/partials/Testimonial.astro";
 import Card        from "@/components/Card.astro";
 import ImageMod    from "@/components/ImageMod.astro";
 import ContactForm from "@/components/ContactForm.astro";
@@ -22,14 +23,14 @@ export function getStaticPaths() {
 const { lang } = Astro.params;
 
 // 2) Page metadata
-const title       = "Phase 3 – Leadfluss mit System";
-const meta_title  = "Phase 3 – FunnelX Methode";
-const description = "So funktioniert Phase 3 im FunnelX Workshop.";
+const title       = "Phase 4 – Performance mit System";
+const meta_title  = "Phase 4 – Performance mit System";
+const description = "So funktioniert Phase 4 im FunnelX Workshop.";
 
 // 3) Hero
 const hero = {
-  title:   "Leadfluss mit System",
-  content: "Wir verbinden Formulare, CRM und Ads zu einem durchgängigen Prozess – damit kein Lead mehr versandet und Plattformen lernen, was ein wirklich guter Kontakt ist.",
+  title:   "Performance mit System",
+  content: "Keine pauschalen Ads: Jede Anzeige ist abgestimmt auf Zielgruppe, Awareness-Stufe und Plattform – für planbare Nachfrage, geringere Streuverluste und bessere Leads.",
   images: [
     "/images/features/1.png",
     "/images/features/1.png"
@@ -46,8 +47,8 @@ const hero = {
   features: [
     {
       button: "Strategie Call buchen",
-      title:  "Verlieren Sie keine Leads mehr: Strukturierter Leadfluss, der verkauft.",
-      content:"Wir machen aus Kontakten echte Verkaufschancen – mit einem CRM-System, das Leads erfasst, bewertet, weiterleitet und Plattformen zeigt, was ein guter Kontakt wirklich ist.",
+      title:  "Schalten Sie Werbung, die verkauft.",
+      content:"Wir erzeugen planbare Nachfrage – mit datenbasierten Kampagnen, Funnel-Strategie und CRM-Anbindung. So wird Paid Media messbar, effizient und profitabel.",
       image:   "/images/features/1.png",
       link:    { enable: true, label: "Mehr Strategie Call buchen", link: "/details" }
     },
@@ -252,10 +253,68 @@ const faq = {
     button: { label: "Strategie Call buchen", link: "/kontakt" }
   }
 };
+
+
+const testimonial = [
+  {
+    data: {
+      enable: true,
+      title: "Vertrauen durch messbare Ergebnisse",
+      reviews: [
+        {
+          company: "/images/testimonial/8.svg",
+          review: "Durch Phase 2 haben wir in nur zwei Wochen erste messbare Erfolge gesehen!",
+          author: "/images/avatar/1.png",
+          name: "Julia Meier",
+          designation: "Head of Marketing, B2B Tech GmbH",
+        },
+        {
+          company: "/images/testimonial/9.svg",
+          review: "Die Quick-Wins waren sofort umsetzbar und haben uns richtig vorangebracht.",
+          author: "/images/avatar/2.png",
+          name: "Thomas Klein",
+          designation: "CEO, Consulting AG",
+        },
+        {
+           company: "/images/testimonial/10.svg",
+          review: "Klar strukturierte Umsetzung – genau das, was uns gefehlt hat.",
+          author: "/images/avatar/3.png",
+          name: "Sandra Vogel",
+          designation: "CMO, HealthTech Solutions",
+        },
+                {
+           company: "/images/testimonial/10.svg",
+          review: "Klar strukturierte Umsetzung – genau das, was uns gefehlt hat.",
+          author: "/images/avatar/3.png",
+          name: "Sandra Vogel",
+          designation: "CMO, HealthTech Solutions",
+        },
+                {
+           company: "/images/testimonial/10.svg",
+          review: "Klar strukturierte Umsetzung – genau das, was uns gefehlt hat.",
+          author: "/images/avatar/3.png",
+          name: "Sandra Vogel",
+          designation: "CMO, HealthTech Solutions",
+        },
+                {
+           company: "/images/testimonial/10.svg",
+          review: "Klar strukturierte Umsetzung – genau das, was uns gefehlt hat.",
+          author: "/images/avatar/3.png",
+          name: "Sandra Vogel",
+          designation: "CMO, HealthTech Solutions",
+        },
+      ],
+    },
+  },
+];
+
+
 ---
 
 <Base title={title} meta_title={meta_title} description={description}>
   <Hero {hero} />
+
+   <Testimonial {testimonial} />
 
     <!-- Trust section with inline data -->
   <Trust {trust} />
