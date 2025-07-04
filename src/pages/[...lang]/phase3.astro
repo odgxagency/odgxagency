@@ -1,0 +1,307 @@
+---
+import Hero        from "@/components/features/Hero.astro";
+import Reasons     from "@/components/home/Reasons.astro";
+import Faq         from "@/components/Faq.astro";
+import Trust       from "@/components/features/Trust.astro";
+import More    from "@/components/features/More.astro";
+import Card        from "@/components/Card.astro";
+import ImageMod    from "@/components/ImageMod.astro";
+import ContactForm from "@/components/ContactForm.astro";
+import DynamicIcon from "@/helpers/DynamicIcon";
+import Base        from "@/layouts/Base.astro";
+import { markdownify } from "@/lib/utils/textConverter";
+import { supportedLang } from "@/lib/utils/languageParser";
+
+
+// 1) Tell Astro which locales to build:
+export function getStaticPaths() {
+  return supportedLang.map((lng) => ({
+    params: { lang: lng || undefined },
+  }));
+}
+
+const { lang } = Astro.params;
+
+// 2) Page metadata
+const title       = "Phase 3 – Leadfluss mit System";
+const meta_title  = "Phase 3 – FunnelX Methode";
+const description = "So funktioniert Phase 2 im FunnelX Workshop.";
+
+// 3) Hero
+const hero = {
+  title:   "Leadfluss mit System",
+  content: "Wir verbinden Formulare, CRM und Ads zu einem durchgängigen Prozess – damit kein Lead mehr versandet und Plattformen lernen, was ein wirklich guter Kontakt ist.",
+  images: [
+    "/images/features/1.png",
+    "/images/features/1.png"
+  ],
+  client_logos: [
+    "/images/features/1.png",
+    "/images/features/1.png",
+    "/images/features/1.png"
+  ],
+  buttons: [
+    { label: "Kostenloses Erstgespräch", link: "/kontakt" },
+    { label: "Mehr erfahren",          link: "/learn-more" }
+  ],
+  features: [
+    {
+      button: "Strategie Call buchen",
+      title:  "Verlieren Sie keine Leads mehr: Strukturierter Leadfluss, der verkauft.",
+      content:"Wir machen aus Kontakten echte Verkaufschancen – mit einem CRM-System, das Leads erfasst, bewertet, weiterleitet und Plattformen zeigt, was ein guter Kontakt wirklich ist.",
+      image:   "/images/features/1.png",
+      link:    { enable: true, label: "Mehr Strategie Call buchen", link: "/details" }
+    },
+    {
+      button: "Unsere Methode",
+      title:  "Praxis-Beispiele",
+      content:"Schauen Sie, wie andere in Phase 2 Erfolge feiern.",
+      image:    "/images/features/1.png",
+      link:    { enable: true, label: "Fallstudien",   link: "/cases" }
+    }
+  ]
+};
+
+
+
+// 5) Reasons
+const reason = {
+  title: "Wissen Sie, was mit Ihren Leads passiert – nach dem Absenden des Formulars?",
+  intro: "Viele Unternehmen investieren in gute Inhalte und Werbeanzeigen – verlieren aber den Überblick, was danach passiert. Unser CRM-Setup sorgt dafür, dass kein Lead verloren geht und Ihr Vertrieb mit den besten Kontakten arbeitet.",
+  points: [
+    {
+      title:   "Keine zentrale Lead-Übersicht",
+      content: "„Wir bekommen Anfragen, aber es gibt keine Stelle, an der wirklich alle Leads gesammelt und bewertet werden.“",
+      image:   "/images/features/1.png",
+    },
+    {
+      title:   "Unklare Herkunft der Leads",
+      content: "„Wir wissen nicht, ob dieser Lead über Google Ads, LinkedIn oder SEO kam – die Kampagnenzuordnung fehlt.“",
+      image:   "/images/features/2.png",
+    },
+    {
+      title:   "Keine Rückmeldung an Ads",
+      content: "„Wir geben viel für Werbung aus – aber wissen nicht, ob daraus wirklich gute Leads entstehen.“– aber keine Insights für Kampagnen oder Content.“",
+      image:   "/images/features/3.png",
+    },
+        {
+      title:   " Kein strukturierter Vertriebsprozess",
+      content: "„Die Lead-Bearbeitung läuft über E-Mails, Tabellen oder geht einfach unter.“",
+      image:   "/images/features/4.png",
+    },
+  ],
+};
+
+
+
+// 7) Mini‐case studies grid
+const changelogTitle = "CRM, das branchenspezifisch Leads verwertet";
+const contentText    = "Ob FinTech, Beratung oder technischer Mittelstand – wir setzen CRM so auf, dass es zu Ihrem Funnel passt. Keine generischen Kontaktformulare, sondern strukturierter Leadfluss, abgestimmt auf Zielgruppe & Journey.";
+const logs = [
+  { image: "/images/homepage/feature/4.png", version: "Finanzdienstleister", note: "„Wir dürfen keinen Lead verlieren – schon gar nicht bei sensiblen Produkten.“ <br>→ DSGVO-konforme Lead-Erfassung, sichere Retargeting-Rückspielung." },
+  { image: "/images/homepage/feature/3.png", version: "B2B-Leads",  note: "„Wo stehen unsere Leads – und was brauchen sie als Nächstes?“ <br>→ Lead-Scoring, Status-Tracking, Integration von Meetings & Content-Interaktionen." },
+  { image: "/images/homepage/feature/4.png", version: "Technischer Mittelstand / KMU",  note: "„Wir brauchen endlich Übersicht & Verbindlichkeit im Vertrieb.“ <br>→ Zentrales CRM für Website & Sales, einfache Nutzung via HubSpot, automatische Vertriebszuweisung." },
+
+  { image: "/images/homepage/feature/4.png", version: "Beratung & Agenturen",  note: "„Wie performt unser Content? Wo verlieren wir Interessenten?“<br>→ Scroll- & Sessiontracking auf Seiten, Mikrofeedback, Heatmaps & PDF-Downloads als Soft-Ziel" },
+  { image: "/images/homepage/feature/4.png", version: "HR & Recruiting-Dienstleister",  note: "„Viele schauen sich unsere Stellen an, aber keiner klickt.“<br>→ Funnelstufen für Bewerbungsprozess, Event-Ziele pro Phase, Form-Abbrüche & Funnel-Retargeting" },
+  { image: "/images/homepage/feature/4.png", version: " FinTech Startups",  note: "„Komplexes Produkt, komplexer Funnel, was bringt wirklich was?“ <br> → Nutzungstracking in Onboarding-Strecken, Segmentierung nach Funnel-Verhalten, Server Side Tracking" },
+];
+
+// 8) Contact call-out
+const contactHero = {
+  title:   "Bereit für Phase 2?",
+  content: "Lassen Sie uns gemeinsam den nächsten Schritt gehen – unverbindlich und zielgerichtet.",
+};
+const contacts = [
+  { icon: "FaPhone",    name: `<strong>Telefon:</strong> <a href="tel:+4909001234567">+49 0900 1234567</a>` },
+  { icon: "FaEnvelope", name: `<strong>E-Mail:</strong> <a href="mailto:hi@funnelx.de">hi@…</a>`            },
+  { icon: "FaMapPin",   name: `<strong>Adresse:</strong> Musterstraße 1, Berlin`                          },
+];
+
+
+
+// ─── hard‐coded experience section ────────────────────
+const experience = {
+  title: "Was andere über den FunnelX Workshop sagen",
+  cards: [
+    {
+      image:   "/images/features/1.png",
+      title:   "Pilot-Workshops",
+      content: "Erste 10 Testsessions zusammen mit Pionier-Unternehmen im Jahr 2020.",
+    },
+    {
+      image:   "/images/features/1.png",
+      // this becomes the large middle image
+      title:   "Über 200 Workshops",
+      content: "Online & vor Ort seit 2020—mit durchweg positiver Resonanz.",
+    },
+    {
+      image:   "/images/features/1.png",
+      value:   "TOFU (Top of Funnel)",
+      suffix:  "",
+      title:   "TOFU (Top of Funnel)",
+      content: "Nutzerproblem erkannt – Lösung noch unklar - Ziele: Aufmerksamkeit & Engagement - Beispiele: • Scrolltiefe > 75 % • Whitepaper Download• FAQ geöffnet• Verweildauer > 90 Sek",
+    },
+    {
+      image:   "/images/features/1.png",
+      value:   50,
+      suffix:  "+",
+      title:   "Unternehmen",
+      content: "„Dank des Workshops wussten wir endlich, wo unsere Website blockiert – und wie wir gezielter Leads gewinnen. Die Klarheit über unsere Zielgruppe hat vieles verändert.“– Marketing-Leiterin, B2B-Unternehmen",
+    },
+    {
+      image:   "/images/features/1.png",
+      value:   95,
+      suffix:  "%",
+      title:   "Zufriedenheit",
+      content: "Durchschnittliche Teilnehmer-Zufriedenheit.",
+    },
+  ],
+};
+
+
+
+
+// 4) Trust — hard-coded here instead of from MD
+const trust = {
+  title:   "Vertrauen durch strukturierte Leadprozesse",
+  content: "Unsere Kunden schätzen nicht nur die Technik – sondern die Klarheit, Struktur und Lead-Qualität, die unser CRM-System schafft. Vom ersten Formular bis zur Conversion: Alles ist nachvollziehbar, messbar und automatisiert steuerbar.",
+  stats: [
+    {
+      company:   "/images/testimonial/11.svg",
+      comment:   "Dank der datengetriebenen Optimierungen konnten wir unsere Conversion-Rate verdoppeln.",
+      author:    "/images/avatar/7.png",
+      name:      "Henry Arthur",
+      designation: "Gründer, Neitzsche",
+      numbers: [
+        { value: 200, suffix: "%", subtitle: "Conversion-Steigerung" },
+        { value: 3,   suffix: "×", subtitle: "ROI-Wachstum" },
+      ],
+    },
+    {
+      company:   "/images/testimonial/9.svg",
+      comment:   "Durch kontinuierliche Tests haben wir unsere Kosten pro Lead halbiert.",
+      author:    "/images/avatar/6.png",
+      name:      "Jane Smith",
+      designation: "Marketing-Direktorin",
+      numbers: [
+        { value: 50,  suffix: "%", subtitle: "CPL-Reduktion" },
+        { value: 120, suffix: "+", subtitle: "Neue Leads monatlich" },
+      ],
+    },
+  ],
+  button: {
+    enable: true,
+    label:  "Strategie Call buchen",
+    link:   "/contact",
+  },
+};
+
+
+
+
+// 5) More (all inlined; no MD file)
+const more = {
+  title:   "Was wir in Phase 3 tun",
+  content: "Wir entwickeln Ihre Funnel-Automationen, setzen intelligente Alerts auf und bauen Ihr Reporting-Dashboard.",
+  points: [
+    { icon: "FaCogs",    details: "Struktur & Integration<br><br><p style='font-weight:light;text-align: left'>Wir richten ein CRM ein, das nicht nur Kontakte speichert, sondern sie intelligent einordnet – nach Quelle, Funnelstufe & Verhalten.</p><br>–> Formulare, Terminbuchung & Ads direkt in HubSpot verbunden. → Automatische Attribution via UTM-Tracking" },
+    { icon: "FaChartBar", details: "Leads mit System bearbeiten<br><br><p style='font-weight:light;text-align: left'>Kein Chaos mehr in der Inbox. Jeder Lead bekommt sofort einen Status, kann gescored & weitergeleitet werden.<br><br><p style='font-weight:light;text-align: left'>→ Lifecycle-Stufen, Scoring-Regeln, Sales-Weitergabe ab „Qualifiziert“ → Nurturing-Mails & Follow-ups, wenn kein Kontakt erfolgt" },
+    { icon: "FaBullhorn", details: "Rückspielung & Optimierung<br><br><p style='font-weight:light;text-align: left'>Was bringt wirklich gute Leads? Wir zeigen es den Plattformen – mit Conversion-Rückspielung aus dem CRM.<br><br>→ Meta, Google & LinkedIn erhalten echte Qualifizierungsdaten <br>→ Weniger Streuverlust, bessere Performance, lernendes Ads-System" },
+  ],
+};
+
+---
+
+<Base title={title} meta_title={meta_title} description={description}>
+  <Hero {hero} />
+
+    <!-- Trust section with inline data -->
+  <Trust {trust} />
+
+
+
+  <Reasons {reason} />
+
+    <!-- **This** is your More, but pulling everything from `phase3.astro` -->
+  <More {more} />
+
+
+  <section class="container lg:1/2 xl:w-full py-16">
+    <div class="row justify-center g-4">
+      <div class="col-12 text-center">
+        <h1 
+          set:html={markdownify(changelogTitle)}
+          class="text-[32px] md:text-[48px] lg:text-[64px] mb-6"
+          data-aos="fade-up-sm"
+        />
+        <p 
+          set:html={markdownify(contentText)}
+          class="lg:w-1/2 mx-auto mb-14"
+          data-aos="fade-up-sm"
+        />
+      </div>
+      {logs.map((log, i) => (
+        <div 
+          class="col-12 md:col-6 lg:col-4 min-h-full"
+          data-aos="fade-up-sm"
+          data-aos-delay={50 + i * 100}
+        >
+          <div class="border border-border rounded-2xl flex flex-col h-full">
+            <Card className="!rounded-2xl bg-light flex-1">
+              <div class="flex justify-center items-center p-10 md:p-20">
+                <ImageMod src={log.image} alt={log.version} width={0} height={0} class="object-contain" />
+              </div>
+            </Card>
+            <div class="p-6">
+              <h4 set:html={markdownify(log.version)} class="mb-3" />
+              <p  set:html={markdownify(log.note)}    class="text-text-gray" />
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+
+  <Faq />
+
+  <section class="section">
+    <div class="container">
+      <div class="row g-4 justify-center">
+        <div class="col-12 text-center">
+          <h1 
+            set:html={markdownify(contactHero.title)}
+            class="text-[32px] md:text-[48px] lg:text-[64px] mb-6" 
+            data-aos="fade-up-sm"
+          />
+          <p  
+            set:html={markdownify(contactHero.content)}
+            class="lg:w-1/2 mx-auto mb-14"
+            data-aos="fade-up-sm"
+          />
+        </div>
+        <div class="col-12 md:col-10 lg:col-8 xl:col-5">
+          <div class="p-10 bg-light rounded-xl flex flex-col justify-between h-full">
+            <h3 class="mb-6" data-aos="fade-up-sm">Start a Conversation</h3>
+            {contacts.map((c, i) => (
+              <div 
+                class="flex items-center mb-4 last:mb-0"
+                data-aos="fade-up-sm"
+                data-aos-delay={i * 100}
+              >
+                <div class="mr-4 p-5 rounded-full bg-primary w-fit">
+                  <DynamicIcon icon={c.icon} className="text-text-light text-3xl" />
+                </div>
+                <p set:html={markdownify(c.name)} class="text-xl" />
+              </div>
+            ))}
+          </div>
+        </div>
+        <div class="col-12 md:col-10 lg:col-8 xl:col-7">
+          <ContactForm lang={lang} />
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>

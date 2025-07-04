@@ -18,8 +18,8 @@
           "url": "/phase2"
         },
         {
-          "name": "Tracking & Analytics",
-          "url": "/"
+           "name": "Phase 3",
+          "url": "/phase3"
         },
         {
           "name": "CRM & Leadflow-Automatisierung",
@@ -30,7 +30,7 @@
           "url": "/"
         }
       ]
-    },
+    }, 
     {
       "name": "Methode",
       "url": "/methode"
