@@ -1,7 +1,6 @@
 ---
 import Hero        from "@/components/features/Hero.astro";
 import Reasons     from "@/components/home/Reasons.astro";
-import Faq         from "@/components/Faq.astro";
 import Trust       from "@/components/features/Trust.astro";
 import More    from "@/components/features/More.astro";
 import Card        from "@/components/Card.astro";
@@ -109,8 +108,8 @@ const logs = [
 
 // 8) Contact call-out
 const contactHero = {
-  title:   "Bereit für Phase 2?",
-  content: "Lassen Sie uns gemeinsam den nächsten Schritt gehen – unverbindlich und zielgerichtet.",
+  title:   "Ist der FunnelX Workshop das Richtige für Sie?",
+  content: "In einem kostenlosen Strategiegespräch finden wir gemeinsam heraus, ob der FunnelX Workshop der passende Einstieg für Sie ist – oder ob ein anderer Schritt sinnvoller wäre.",
 };
 const contacts = [
   { icon: "FaPhone",    name: `<strong>Telefon:</strong> <a href="tel:+4909001234567">+49 0900 1234567</a>` },
@@ -211,6 +210,48 @@ const more = {
   ],
 };
 
+
+
+
+// 1) Your inline FAQ data
+const faq = {
+  title1: "Ihre Fragen – Unsere Antworten",
+  title2: "Alles, was Sie zur FunnelX-Methode wissen müssen",
+  items: [
+    {
+      question: "Warum brauchen wir überhaupt Tracking?",
+      answer: "Damit ihr seht, was wirklich auf der Website passiert: Wer scrollt? Wer liest? Wer klickt? Nur so könnt ihr gezielt optimieren, statt zu raten."
+    },
+    {
+      question: "Was genau wird bei uns gemessen?",
+      answer: "Nicht nur Leads, sondern auch Zwischenschritte: z. B. Scrolltiefe, Downloads, Video-Nutzung oder Formular-Starts. So erkennt ihr, wo jemand im Funnel steht."
+    },
+    {
+      question: "Ist das Tracking auch datenschutzkonform?",
+      answer: "Ja. Wir setzen auf DSGVO-sichere Tools & Server-Side-Tracking. Heißt: Keine Cookie-Probleme, bessere Datenqualität."
+    },
+    {
+      question: "Wie schnell sehen wir Ergebnisse?",
+      answer: "Schon nach ein paar Wochen seht ihr, was gut läuft und was nicht. Mit jedem Monat wird das System präziser und hilfreicher."
+    },
+    {
+      question: "Ist das nicht zu technisch für uns?",
+      answer: "Nein, ihr bekommt klare Auswertungen, keine Tabellenhölle. Wir richten alles ein & dokumentieren, was gemessen wird, verständlich & praxisnah."
+    },
+    {
+      question: "Können wir damit auch sehen, welche Inhalte gut ankommen?",
+      answer: "Ja, ihr seht z. B., wie lange Leute lesen, welche Seiten sie öffnen oder wo sie abspringen. So könnt ihr Inhalte gezielt verbessern oder erweitern."
+    },
+    {
+      question: "Müssen wir dafür ständig was selbst machen?",
+      answer: "Nein. Wir übernehmen Setup & Auswertung. Ihr bekommt die wichtigsten Erkenntnisse regelmäßig, klar zusammengefasst, ohne Fachchinesisch."
+    }
+  ],
+  cta: {
+    text:   "Noch offene Fragen?",
+    button: { label: "Strategie Call buchen", link: "/kontakt" }
+  }
+};
 ---
 
 <Base title={title} meta_title={meta_title} description={description}>
@@ -263,8 +304,85 @@ const more = {
     </div>
   </section>
 
+ 
+    <!--  ===== inline FAQ section starts here =====  -->
+  <section class="section relative overflow-hidden">
+    <div class="container">
+      <div class="row justify-center">
+        <div class="col-12 mb-14 text-center" data-aos="fade-up-sm">
+          <h2 set:html={markdownify(faq.title1)} class="mb-2" />
+          <h2 set:html={markdownify(faq.title2)} />
+        </div>
+        <div class="col-12 lg:col-9 xl:col-10 mb-14">
+          <div class="accordion-container">
+            {faq.items.map((f, i) => (
+              <div
+                class={"accordion" + (i === 0 ? " active" : "")}
+                data-aos="fade-up-sm"
+                data-aos-delay={50 + i * 100}
+              >
+                <button class="accordion-header" data-accordion>
+                  <span set:html={markdownify(f.question)} />
+                  <svg class="accordion-icon" xmlns="http://www.w3.org/2000/svg" fill="none">
+                    <path fill="#101010" d="m11 0 1.556 9.444L22 11l-9.444 1.556L11 22l-1.556-9.444L0 11l9.444-1.556z" opacity=".5"/>
+                  </svg>
+                </button>
+                <div class="accordion-content">
+                  <p set:html={markdownify(f.answer)} />
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div class="col-12 text-center" data-aos="fade-up-sm">
+          <p set:html={markdownify(faq.cta.text)} class="text-lg mb-4" />
+          <a href={faq.cta.button.link} class="btn btn-primary">
+            {faq.cta.button.label}
+          </a>
+        </div>
+      </div>
+    </div>
 
-  <Faq />
+    <!-- your background blobs -->
+    <div
+      class="aspect-[2.433/1] w-[51%] h-[300px] absolute left-1/2 top-[194px] -translate-x-1/2 opacity-15 overflow-visible -z-10"
+      style="transform: translateX(-50%) rotate(-141deg);"
+    >
+      <!-- Violet blob -->
+      <div
+        class="absolute left-[329px] -top-[296px] -bottom-[756px] w-[305px] rounded-full bg-[#a5a2ff] blur-[162px]"
+        style="transform: rotate(-80deg); animation: move-blob 10s infinite ease-in-out;"
+      />
+      <!-- Green blob -->
+      <div
+        class="absolute left-[200px] top-[200px] w-[41%] h-[521px] rounded-full bg-[#29c775] blur-[162px]"
+        style="transform: rotate(100deg); animation: move-blob 10s infinite ease-in-out 2s;"
+      />
+      <!-- Yellow blob -->
+      <div
+        class="absolute -right-[40px] -top-[160px] w-[49%] h-[625px] rounded-full bg-[#ffe74b] blur-[162px]"
+        style="transform: rotate(-80deg); animation: move-blob 10s infinite ease-in-out 4s;"
+      />
+    </div>
+  </section>
+
+  <script>
+    document.addEventListener("astro:page-load", () => {
+      const headers = document.querySelectorAll(".accordion-header");
+      headers.forEach((h) => {
+        h.addEventListener("click", () => {
+          const item = h.parentElement!;
+          // close others
+          document
+            .querySelectorAll(".accordion")
+            .forEach((acc) => acc !== item && acc.classList.remove("active"));
+          item.classList.toggle("active");
+        });
+      });
+    });
+  </script>
+
+  <!--  ===== inline FAQ section ends here =====  -->
 
   <section class="section">
     <div class="container">
